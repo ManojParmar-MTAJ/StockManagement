@@ -1,0 +1,23 @@
+<h1 aling="center" >Show product</h1>
+<p id="notice"><%= notice %></p>
+
+<table border="2" align="center">
+<tr>
+  <th><strong>product_name:</strong></th>
+ <td><%= @product.product_name %></td>
+</tr>
+
+<tr>
+  <th><strong>product_price:</strong></th>
+ <td> <%= @product.product_price %></td>
+</tr>
+
+<tr>
+  <th><strong>product_qty:</strong></th>
+ <td> <%= @product.product_qty %></td>
+</tr>
+
+<tr>
+<td colspan="2" style="text-align: center;"><%= link_to 'Edit', edit_product_path(@product) %></td>
+</tr>
+</table>
