@@ -6,8 +6,14 @@
   <thead>
     <tr>
       <th>product_name</th>
+      <th>product_code</th>
+      <th>brand</th>
+      <th>product_category</th>
+      <th>unit</th>
+      <th>cgst</th>
+      <th>sgst</th>
+      <th>product_cost</th>
       <th>product_price</th>
-      <th>product_qty</th>
       <th colspan="4"></th>
     </tr>
   </thead>
@@ -16,8 +22,14 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.product_name %></td>
+        <td><%= product.product_code %></td>
+        <td><%= product.brand %></td>
+        <td><%= product.product_category %></td>
+        <td><%= product.unit %></td>
+        <td><%= product.cgst%></td>
+        <td><%= product.sgst %></td>
+        <td><%= product.product_cost %></td>
         <td><%= product.product_price %></td>
-        <td><%= product.product_qty %></td>
         <td><%= link_to 'Show', product %></td>
         <td><%= link_to 'Edit', edit_product_path(product) %></td>
         <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

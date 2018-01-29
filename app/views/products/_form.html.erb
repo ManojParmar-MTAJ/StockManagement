@@ -11,24 +11,68 @@
     </div>
   <% end %>
   <table border="2" align="center" cellspacing="4" cellpadding="4">
-    <tr>
+
+<tr>
   <div class="field">
     <td><%= form.label :product_name %></td>
    <td> <%= form.text_field :product_name, id: :product_name %></td>
   </div>
 </tr>
 
-  <tr>
+<tr>
   <div class="field">
-   <td> <%= form.label :product_price %></td>
-    <td><%= form.number_field :product_price, id: :product_price %></td>
+    <td><%= form.label :product_code %></td>
+   <td> <%= form.text_field :product_code, id: :product_code %></td>
+  </div>
+</tr>
+
+
+<tr>
+  <div class="field">
+   <td> <%= form.label :brand %></td>
+    <td><%= form.text_field :brand, id: :brand%></td>
   </div>
 </tr>
 
 <tr>
   <div class="field">
-   <td> <%= form.label :product_qty%></td>
-    <td><%= form.number_field :product_qty, id: :product_qty %></td>
+   <td> <%= form.label :product_category %></td>
+    <td><%= form.text_field :product_category, id: :product_category %></td>
+  </div>
+</tr>
+
+<tr>
+<div class="field">
+   <td> <%= form.label :unit %></td>
+    <td><%= form.text_field :unit, id: :unit%></td>
+  </div>
+</tr>
+
+<tr>
+<div class="field">
+   <td> <%= form.label :cgst %></td>
+    <td><%= form.number_field :cgst, id: :cgst%></td>
+  </div>
+</tr>
+
+<tr>
+<div class="field">
+   <td> <%= form.label :sgst %></td>
+    <td><%= form.number_field :sgst, id: :sgst%></td>
+  </div>
+</tr>
+
+<tr>
+<div class="field">
+   <td> <%= form.label :product_cost %></td>
+    <td><%= form.number_field :product_cost, id: :product_cost%></td>
+  </div>
+</tr>
+
+<tr>
+<div class="field">
+   <td> <%= form.label :product_price %></td>
+    <td><%= form.number_field :product_price, id: :product_price%></td>
   </div>
 </tr>
 
