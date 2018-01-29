@@ -1,7 +1,5 @@
 <p id="notice"><%= notice %></p>
-
 <h1 align="center" >Products</h1>
-
 <table border="1" align="center" cellspacing="5" cellpadding="5">
   <thead>
     <tr>
@@ -17,27 +15,24 @@
       <th colspan="4"></th>
     </tr>
   </thead>
-
   <tbody>
     <% @products.each do |product| %>
-      <tr>
-        <td><%= product.product_name %></td>
-        <td><%= product.product_code %></td>
-        <td><%= product.brand %></td>
-        <td><%= product.product_category %></td>
-        <td><%= product.unit %></td>
-        <td><%= product.cgst%></td>
-        <td><%= product.sgst %></td>
-        <td><%= product.product_cost %></td>
-        <td><%= product.product_price %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= product.product_name %></td>
+      <td><%= product.product_code %></td>
+      <td><%= product.brand %></td>
+      <td><%= product.product_category %></td>
+      <td><%= product.unit %></td>
+      <td><%= product.cgst%></td>
+      <td><%= product.sgst %></td>
+      <td><%= product.product_cost %></td>
+      <td><%= product.product_price %></td>
+      <td><%= link_to 'Show', product %></td>
+      <td><%= link_to 'Edit', edit_product_path(product) %></td>
+      <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </body>
 </table>
-
 <br>
-
 <%= link_to 'New Product', new_product_path %>
