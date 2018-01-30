@@ -2,41 +2,58 @@
 
 <table border="3" align="center" cellspasing="5" cellpadding="10">
   <tr>
-    <th> <strong>supplier_name:</strong></th>
+    <th>
+      <strong>supplier_name:</strong>
+    </th>
     <td><%= @supplier.supplier_name %></td>
-</tr>
+  </tr>
 
   <tr>
-  <th><strong>product_name:</strong></th>
-  <td><%= @supplier.product_name %></td>
-</tr>
+    <th>
+      <strong>product_name:</strong>
+    </th>
+    <td><%= @supplier.product_name %></td>
+  </tr>
 
-<tr>
-  <th><strong>company_name:</strong></th>
-  <td><%= @supplier.company_name %> </td>
-</tr>
+  <tr>
+    <th>
+      <strong>company_name:</strong>
+    </th>
+    <td><%= @supplier.company_name %>
+    </td>
+  </tr>
 
-<tr>
-<th><strong>address:</strong></th>
-<td><%= @supplier.address %></td>
-</tr>
+  <tr>
+    <th>
+      <strong>address:</strong>
+    </th>
+    <td><%= @supplier.address %></td>
+  </tr>
 
-<tr>
-  <th><strong>city_name:</strong></th>
-  <td><%= @supplier.city_name %> </td>
-</tr>
+  <tr>
+    <th>
+      <strong>city_name:</strong>
+    </th>
+    <td><%= @supplier.city_name %>
+    </td>
+  </tr>
 
-<tr>
-  <th><strong>contact_no:</strong></th>
-  <td><%= @supplier.contact_no %> </td>
-</tr>
+  <tr>
+    <th>
+      <strong>contact_no:</strong>
+    </th>
+    <td><%= @supplier.contact_no %>
+    </td>
+  </tr>
 
-<tr>
-<th><strong>gst_no:</strong></th>
-<td><%= @supplier.gst_no %></td>
-</tr>
+  <tr>
+    <th>
+      <strong>gst_no:</strong>
+    </th>
+    <td><%= @supplier.gst_no %></td>
+  </tr>
 
-
-<tr>
-<td colspan="2" style="italic" align="center"><%= link_to 'Edit', edit_supplier_path(@supplier) %> </td>
-</tr>
+  <tr>
+    <td colspan="2" style="italic" align="center"><%= link_to 'Edit', edit_supplier_path(@supplier) %>
+    </td>
+  </tr>

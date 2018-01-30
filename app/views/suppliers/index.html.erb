@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1 align="center">Suppiler</h1>
+<h1 align="center">Supplier</h1>
 
 <table border="1" align="center" cellspasing="5" cellpadding="5">
   <thead>
@@ -24,7 +24,7 @@
         <td><%= supplier.city_name %></td>
         <td><%= supplier.contact_no %></td>
         <td><%= supplier.gst_no %></td>
-        <td><%= link_to 'Show',supplier  %></td>
+        <td><%= link_to 'Show',supplier %></td>
         <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
         <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
@@ -34,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Supplier', new_supplier_path  %>
+<%= link_to 'New Supplier', new_supplier_path %>
