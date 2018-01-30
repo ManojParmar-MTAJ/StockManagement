@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>StockManagement</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<head>
+  <title>StockManagement</title>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class='skin-blue sidebar-mini'>
+  <div class='wrapper'>
+    <%= render 'layouts/header' %>
+    <%= render 'layouts/sidebar' %>
+    <div class='content-wrapper'>
+      <%= yield %>
+    </div>
+    <%= render 'layouts/footer' %>
+  </div>
+</body>
 </html>
