@@ -1,20 +1,21 @@
-<p id="notice"><%= notice %></p>
-<h1 align="center" >Products</h1>
-<table class="table table-stried" border="2" align="center" cellspacing="4" cellpadding="4">
-  <thead>
-    <tr>
-      <th>product_name</th>
-      <th>product_code</th>
-      <th>brand</th>
-      <th>product_category</th>
-      <th>unit</th>
-      <th>cgst</th>
-      <th>sgst</th>
-      <th>product_cost</th>
-      <th>product_price</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <h1 align="center" >Products</h1>
+  <table class="table table-stried table border" border="2" align="center" cellspacing="4" cellpadding="4">
+    <thead>
+      <tr>
+        <th>product_name</th>
+        <th>product_code</th>
+        <th>brand</th>
+        <th>product_category</th>
+        <th>unit</th>
+        <th>cgst</th>
+        <th>sgst</th>
+        <th>product_cost</th>
+        <th>product_price</th>
+        <th colspan="4"></th>
+      </tr>
+    </thead>
   <tbody>
     <% @products.each do |product| %>
     <tr>
@@ -34,5 +35,6 @@
     <% end %>
   </body>
 </table>
+</div>
 <br>
 <%= link_to 'New Product', new_product_path %>
