@@ -40,7 +40,7 @@ def set_product
 end
 def product_params
   params.require(:product).permit(:product_name,:product_code,:brand,:product_category,:unit,:cgst,:sgst,:product_cost,:product_price)
-  end
+end
 end
 
 
