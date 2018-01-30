@@ -55,6 +55,6 @@ end
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def supplier_params
-    params.require(:supplier).permit(:suppiler_name, :product_name, :company_name, :address, :date, :city_name, :contact_no , :gst_no)
+    params.require(:supplier).permit(:supplier_name, :product_name, :company_name, :address, :city_name, :contact_no , :gst_no)
   end
 end

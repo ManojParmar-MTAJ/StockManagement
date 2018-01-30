@@ -5,7 +5,6 @@ class CreateSuppliers < ActiveRecord::Migration[5.1]
       t.string :product_name
       t.string :company_name
       t.string :address
-      t.string :date
       t.string :city_name
       t.string :contact_no
       t.string :gst_no
