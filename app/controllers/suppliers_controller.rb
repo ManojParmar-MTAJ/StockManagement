@@ -1,5 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
+  
   def index
     @suppliers = Supplier.all
   end
@@ -19,7 +20,7 @@ class SuppliersController < ApplicationController
         format.html { redirect_to @supplier, notice: 'suppiler was successfully created.' }
       else
         format.html { render :new }
-        end
+      end
     end
   end
 
@@ -37,7 +38,9 @@ class SuppliersController < ApplicationController
     if @supplier.destroy
       redirect_to suppliers_path, notice: 'suppiler was successfully destroyed.'
     end
-end
+  end
+
+  private
 
   def set_supplier
     @supplier = Supplier.find(params[:id])
