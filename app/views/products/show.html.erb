@@ -1,0 +1,44 @@
+<h1 alging="center">Show product</h1>
+<p id="notice"><%= notice %></p>
+<table border="2" align="center">
+  <tr>
+    <th><strong>product_name:</strong></th>
+    <td><%= @product.product_name %></td>
+  </tr>
+  <tr>
+    <th><strong>product_code:</strong></th>
+    <td> <%= @product.product_code %></td>
+  </tr>
+  <tr>
+    <th><strong>brand:</strong></th>
+    <td> <%= @product.brand%></td>
+  </tr>
+  <tr>
+    <th><strong>product_category:</strong></th>
+    <td> <%= @product.product_category%></td>
+  </tr>
+  <tr>
+    <th><strong>unit:</strong></th>
+    <td> <%= @product.unit%></td>
+  </tr>
+  <tr>
+    <th><strong>cgst:</strong></th>
+    <td> <%= @product.cgst%></td>
+  </tr>
+  <tr>
+    <th><strong>sgst:</strong></th>
+    <td> <%= @product.sgst%></td>
+  </tr>
+  <tr>
+    <th><strong>product_cost:</strong></th>
+    <td> <%= @product.product_cost%></td>
+  </tr>
+  <tr>
+    <th><strong>product_price:</strong></th>
+    <td> <%= @product.product_price%></td>
+  </tr>
+  <tr>
+    <td colspan="2" style="text-align: center;"><%= link_to 'Edit', edit_product_path(@product) %></td>
+  </tr>
+</table>
+
