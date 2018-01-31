@@ -1,0 +1,67 @@
+<%= form_with(model: supplier, local: true) do |form| %>
+<% if supplier.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(suppiler.errors.count, "error") %>
+      prohibited this suppiler from being saved:</h2>
+
+    <ul>
+      <% supplier.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %><table border="1" align="center" cellspasing="5" cellpadding="5">
+  <tr>
+    <div class="field">
+      <td><%= form.label :supplier_name %></td>
+      <td><%= form.text_field :supplier_name, id: :supplier_name %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :product_name %></td>
+      <td><%= form.text_field :product_name, id: :supplier_product_name %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :company_name %></td>
+      <td><%= form.text_field :company_name, id: :supplier_company_name %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :address %></td>
+      <td><%= form.text_field :address, id: :supplier_address %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :city_name %></td>
+      <td><%= form.text_field :city_name, id: :supplier_city_name %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :contact_no %></td>
+      <td><%= form.text_field :contact_no, id: :supplier_contact_no %></td>
+    </div>
+  </tr>
+
+  <tr>
+    <div class="field">
+      <td><%= form.label :gst_no %></td>
+      <td><%= form.text_field :gst_no, id: :supplier_gst_no %></td>
+    </div>
+  </tr>
+
+  <div class="actions">
+    <td colspan="2" align="center"><%= form.submit %></td>
+  </div>
+</tr>
+<% end %>

@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<table border="3" align="center" cellspasing="5" cellpadding="10">
+  <tr>
+    <th>
+      <strong>supplier name:</strong>
+    </th>
+    <td><%= @supplier.supplier_name %></td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>product name:</strong>
+    </th>
+    <td><%= @supplier.product_name %></td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>company name:</strong>
+    </th>
+    <td><%= @supplier.company_name %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>address:</strong>
+    </th>
+    <td><%= @supplier.address %></td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>city name:</strong>
+    </th>
+    <td><%= @supplier.city_name %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>contact no:</strong>
+    </th>
+    <td><%= @supplier.contact_no %>
+    </td>
+  </tr>
+
+  <tr>
+    <th>
+      <strong>gst no:</strong>
+    </th>
+    <td><%= @supplier.gst_no %></td>
+  </tr>
+
+  <tr>
+    <td colspan="2" style="italic" align="center"><%= link_to 'Edit', edit_supplier_path(@supplier) %>
+    </td>
+  </tr>
