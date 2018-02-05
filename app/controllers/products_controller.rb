@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product,only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
     @products = Product.all
@@ -9,36 +9,34 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
-  def show
-  end
+  def show; end
 
-  def edit
-  end
+  def edit; end
 
   def create
     @product = Product.new(product_params)
-    respond_to do|format|
+    respond_to do |format|
       if @product.save
-        format.html {redirect_to @product, notice: 'product was sussfully created.'}  
+        format.html { redirect_to @product, notice: 'product was sussfully created.' }
       else
-        format.html {render :new} 
+        format.html { render :new }
       end
     end
   end
 
   def update
-    respond_to do|format|
+    respond_to do |format|
       if @product.update(product_params)
-        format.html {redirect_to @product, notice: 'product was sussfully updated.'} 
+        format.html { redirect_to @product, notice: 'product was sussfully updated.' }
       else
-       format.html {render :edit}
+        format.html { render :edit }
       end
     end
   end
 
   def destroy
     if @product.destroy
-     redirect_to products_path, notice: 'product was successfully destroyed.'
+      redirect_to products_path, notice: 'product was successfully destroyed.'
    end
  end
 
@@ -49,6 +47,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_name,:product_code,:brand,:product_category,:unit,:cgst,:sgst,:product_cost,:product_price)
+    params.require(:product).permit(:product_name, :product_code, :image, :brand, :product_category, :unit, :cgst, :sgst, :product_cost, :product_price)
   end
 end
