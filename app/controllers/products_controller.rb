@@ -15,22 +15,18 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    respond_to do |format|
-      if @product.save
-        format.html { redirect_to @product, notice: 'product was sussfully created.' }
-      else
-        format.html { render :new }
-      end
+    if @product.save
+      redirect_to @product, notice: 'product was successfully created'
+    else
+      render :new
+end
     end
-  end
 
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to @product, notice: 'product was sussfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @product.update(product_params)
+      redirect_to @product, notice: 'product was successfully updated.'
+    else
+      render :edit
     end
   end
 

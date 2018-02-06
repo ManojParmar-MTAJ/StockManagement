@@ -1,6 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
-  
+
   def index
     @suppliers = Supplier.all
   end
@@ -15,22 +15,18 @@ class SuppliersController < ApplicationController
 
   def create
     @supplier = Supplier.new(supplier_params)
-    respond_to do |format|
-      if @supplier.save
-        format.html { redirect_to @supplier, notice: 'suppiler was successfully created.' }
-      else
-        format.html { render :new }
-      end
-    end
+    if @supplier.save
+      redirect_to @supplier, notice: 'supplier was successfully created'
+    else
+      render :new
   end
+      end
 
   def update
-    respond_to do |format|
-      if @supplier.update(supplier_params)
-        format.html { redirect_to @supplier, notice: 'supplier was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+    if @supplier.update(supplier_params)
+      redirect_to @supplier, notice: 'supplier was successfully updated.'
+    else
+      render :edit
     end
   end
 
