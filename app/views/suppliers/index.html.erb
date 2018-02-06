@@ -26,9 +26,15 @@
         <td><%= supplier.city_name %></td>
         <td><%= supplier.contact_no %></td>
         <td><%= supplier.gst_no %></td>
-        <td><%= link_to 'Show',supplier %></td>
-        <td><%= link_to 'Edit', edit_supplier_path(supplier) %></td>
-        <td><%= link_to 'Destroy', supplier, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to supplier do %>
+        <i class="fa fa-eye"></i>
+          <% end %></td>
+        <td><%= link_to edit_supplier_path(supplier) do %>
+              <i class="fa fa-pencil"></i>
+            <% end %></td>
+            <td><%= link_to  (supplier), method: :delete, data: { confirm: 'Are you sure?' } do%>
+              <i class="fa fa-trash"></i>
+              <% end %></td>
       </tr>
     <% end %>
   </tbody>
