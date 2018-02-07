@@ -14,6 +14,7 @@ gem 'devise'
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'bootstrap-sass'
+gem "paperclip", "~> 5.0.0"
 gem 'jquery-rails'
 gem 'sass-rails', '~> 5.0'
 gem "font-awesome-rails"

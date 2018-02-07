@@ -2,43 +2,75 @@
 <p id="notice"><%= notice %></p>
 <table border="2" align="center">
   <tr>
-    <th><strong>product_name:</strong></th>
+    <th>
+      <strong>product name:</strong>
+    </th>
     <td><%= @product.product_name %></td>
   </tr>
   <tr>
-    <th><strong>product_code:</strong></th>
-    <td> <%= @product.product_code %></td>
+    <th>
+      <strong>product code:</strong>
+    </th>
+    <td>
+      <%= @product.product_code %></td>
   </tr>
   <tr>
-    <th><strong>brand:</strong></th>
-    <td> <%= @product.brand%></td>
+    <th>
+      <strong>image:</strong>
+    </th>
+    <td>
+      <%= image_tag @product.image %></td>
   </tr>
   <tr>
-    <th><strong>product_category:</strong></th>
-    <td> <%= @product.product_category%></td>
+    <th>
+      <strong>brand:</strong>
+    </th>
+    <td>
+      <%= @product.brand%></td>
   </tr>
   <tr>
-    <th><strong>unit:</strong></th>
-    <td> <%= @product.unit%></td>
+    <th>
+      <strong>product category:</strong>
+    </th>
+    <td>
+      <%= @product.product_category%></td>
   </tr>
   <tr>
-    <th><strong>cgst:</strong></th>
-    <td> <%= @product.cgst%></td>
+    <th>
+      <strong>unit:</strong>
+    </th>
+    <td>
+      <%= @product.unit%></td>
   </tr>
   <tr>
-    <th><strong>sgst:</strong></th>
-    <td> <%= @product.sgst%></td>
+    <th>
+      <strong>cgst:</strong>
+    </th>
+    <td>
+      <%= @product.cgst%></td>
   </tr>
   <tr>
-    <th><strong>product_cost:</strong></th>
-    <td> <%= @product.product_cost%></td>
+    <th>
+      <strong>sgst:</strong>
+    </th>
+    <td>
+      <%= @product.sgst%></td>
   </tr>
   <tr>
-    <th><strong>product_price:</strong></th>
-    <td> <%= @product.product_price%></td>
+    <th>
+      <strong>product cost:</strong>
+    </th>
+    <td>
+      <%= @product.product_cost%></td>
+  </tr>
+  <tr>
+    <th>
+      <strong>product price:</strong>
+    </th>
+    <td>
+      <%= @product.product_price%></td>
   </tr>
   <tr>
     <td colspan="2" style="text-align: center;"><%= link_to 'Edit', edit_product_path(@product) %></td>
   </tr>
 </table>
-
