@@ -31,10 +31,6 @@ ActiveRecord::Schema.define(version: 20180205065843) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.string "product_image_file_name"
-    t.string "product_image_content_type"
-    t.integer "product_image_file_size"
-    t.datetime "product_image_updated_at"
   end
 
   create_table "suppliers", force: :cascade do |t|
