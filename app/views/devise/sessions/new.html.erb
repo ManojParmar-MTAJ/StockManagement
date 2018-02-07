@@ -1,0 +1,40 @@
+  <div class ="login-box">
+     <div class="login-logo">
+    <a href=""><b>Stock</b>Manager</a>
+  </div>
+    <div class="login-box-body">
+<p class="login-box-msg">Sign in to start your session</p>
+
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      
+      <div class="form-group has-feedback">
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email' %>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+      </div>
+      <div class="form-group has-feedback">
+                <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+      </div>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+            <label>
+             <!-- <%= f.check_box :remember_me %> Remember Me -->
+            </label>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <%= f.submit "Sign In", class: 'btn btn-primary btn-block btn-flat' %>
+                  </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+          });
+  });
+</script>
