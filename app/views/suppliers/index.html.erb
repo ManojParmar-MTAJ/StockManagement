@@ -21,58 +21,56 @@
     <div class="col-md-12">
       <div class="box">
 
-
         <!-- /.box-header -->
         <div class="box-body">
-            <table class="table table-bordered table-hover">
+          <table class="table table-bordered table-hover">
             <h1 align="center"></h1>
-          <thead>
-            <tr>
-              <th>supplier name</th>
-              <th>product name</th>
-              <th>company name</th>
-              <th>address</th>
-              <th>city name</th>
-              <th>contact no</th>
-              <th>gst no</th>
-              <th colspan="4">Action</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            <% @suppliers.each do |supplier| %>
+            <thead>
               <tr>
-                <td><%= supplier.supplier_name %></td>
-                <td><%= supplier.product_name %></td>
-                <td><%= supplier.company_name %></td>
-                <td><%= supplier.address %></td>
-                <td><%= supplier.city_name %></td>
-                <td><%= supplier.contact_no %></td>
-                <td><%= supplier.gst_no %></td>
-                <td><%= link_to supplier do %>
-                  <i class="fa fa-eye"></i>
+                <th>supplier name</th>
+                <th>product name</th>
+                <th>company name</th>
+                <th>address</th>
+                <th>city name</th>
+                <th>contact no</th>
+                <th>gst no</th>
+                <th colspan="4">Action</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <% @suppliers.each do |supplier| %>
+                <tr>
+                  <td><%= supplier.supplier_name %></td>
+                  <td><%= supplier.product_name %></td>
+                  <td><%= supplier.company_name %></td>
+                  <td><%= supplier.address %></td>
+                  <td><%= supplier.city_name %></td>
+                  <td><%= supplier.contact_no %></td>
+                  <td><%= supplier.gst_no %></td>
+                  <td><%= link_to supplier do %>
+                    <i class="fa fa-eye"></i>
+                  <% end %>
+                </td>
+                <td><%= link_to edit_supplier_path(supplier) do %>
+                  <i class="fa fa-pencil"></i>
                 <% end %>
               </td>
-              <td><%= link_to edit_supplier_path(supplier) do %>
-                <i class="fa fa-pencil"></i>
+              <td><%= link_to (supplier), method: :delete, data: { confirm: 'Are you sure?' } do%>
+                <i class="fa fa-trash"></i>
               <% end %>
             </td>
-            <td><%= link_to (supplier), method: :delete, data: { confirm: 'Are you sure?' } do%>
-              <i class="fa fa-trash"></i>
-            <% end %>
-          </td>
-        </tr>
-      <% end %>
+          </tr>
+        <% end %>
 
-    </tbody>
-  </table>
+      </tbody>
+    </table>
 
-
-</div>
+  </div>
 </div>
 </div>
 <div class='col-md-12'>
-  <%= link_to 'New Supplier', new_supplier_path, class: 'btn btn-primary' %>
+<%= link_to 'New Supplier', new_supplier_path, class: 'btn btn-primary' %>
 </div>
 
 </div>
