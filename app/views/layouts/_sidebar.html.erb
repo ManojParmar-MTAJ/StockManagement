@@ -34,8 +34,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li class="active"><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+           <li><%= link_to suppliers_path do %><i class="fa fa-circle-o"></i> Suppliers<% end %></li>
+            <li class="active"><%= link_to products_path do %><i class="fa fa-circle-o"></i>Products<% end %></li>
           </ul>
         </li>
         <li class="treeview">
@@ -198,4 +198,3 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-

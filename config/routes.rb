@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'products#index'
+  root to: 'homes#index'
   devise_scope :user do
     root to: 'devise/sessions#new'
   end
