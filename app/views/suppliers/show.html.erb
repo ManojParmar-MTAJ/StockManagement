@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<table border="3" align="center" cellspasing="5" cellpadding="10">
+<table class="table table stried" align="center" cellspacing="2" cellpadding="2" style="margin-left:360px">
   <tr>
-    <th>
+    <th style="width: 180px;">
       <strong>supplier name:</strong>
     </th>
     <td><%= @supplier.supplier_name %></td>
@@ -19,8 +19,7 @@
     <th>
       <strong>company name:</strong>
     </th>
-    <td><%= @supplier.company_name %>
-    </td>
+    <td><%= @supplier.company_name %></td>
   </tr>
 
   <tr>
@@ -54,6 +53,6 @@
   </tr>
 
   <tr>
-    <td colspan="2" style="italic" align="center"><%= link_to 'Edit', edit_supplier_path(@supplier) %>
+    <td  style="italic" align="center"><%= link_to 'Edit', edit_supplier_path(@supplier) %>
     </td>
   </tr>

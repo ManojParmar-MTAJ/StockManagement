@@ -1,8 +1,9 @@
 <%= form_with(model: supplier, local: true) do |form| %>
 <% if supplier.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(suppiler.errors.count, "error") %>
-      prohibited this suppiler from being saved:</h2>
+    <h2><%= pluralize(supplier.errors.count, "error") %>
+       prohibited this supplier from being saved:
+    </h2>
 
     <ul>
       <% supplier.errors.full_messages.each do |message| %>
@@ -11,58 +12,76 @@
     </ul>
   </div>
 <% end %>
-<table border="1" align="center" cellspasing="5" cellpadding="5">
-  <tr>
-    <div class="field">
-      <td><%= form.label :supplier_name %></td>
-      <td><%= form.text_field :supplier_name %></td>
-    </div>
-  </tr>
+<!-- Main content -->
+<section class="content">
+  <div class="row">
+    <!-- left column -->
+    <div class="col-lg-12">
+      <!-- general form elements -->
+      <div class="box box-primary">
+        <div class="box-header with-border">
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :product_name %></td>
-      <td><%= form.text_field :product_name %></td>
-    </div>
-  </tr>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form">
+          <div class="box-body">
+            <div class="row">
+              <div class="col-md-6">
+                  <div class="form-group">
+                    <%= form.label :supplier_name %>
+                      <%= form.text_field :supplier_name, class: 'form-control', placeholder: 'Supplier Name' %>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group ">
+                    <%= form.label :product_name %>
+                  <%= form.text_field :product_name, class: 'form-control', placeholder:'Product name' %>
+                </div>
+            </div>
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :company_name %></td>
-      <td><%= form.text_field :company_name %></td>
-    </div>
-  </tr>
+            <div class="col-md-6">
+                <div class="form-group ">
+                <%= form.label :company_name %>
+                <%= form.text_field :company_name, class: 'form-control', placeholder:'Company name' %>
+                  </div>
+                </div>
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :address %></td>
-      <td><%= form.text_field :address %></td>
-    </div>
-  </tr>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                    <%= form.label :address %>
+                  <%= form.text_field :address , class: 'form-control', placeholder:'Address'%>
+                </div>
+            </div>
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :city_name %></td>
-      <td><%= form.text_field :city_name %></td>
-    </div>
-  </tr>
+            <div class="col-md-6">
+                <div class="form-group ">
+                <%= form.label :city_name %>
+                <%= form.text_field :city_name, class: 'form-control', placeholder:'Enter city Name' %>
+                  </div>
+                </div>
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :contact_no %></td>
-      <td><%= form.text_field :contact_no %></td>
-    </div>
-  </tr>
+                <div class="col-md-6">
+                    <div class="form-group ">
+                    <%= form.label :contact_no %>
+                  <%= form.text_field :contact_no , class: 'form-control', placeholder:'Enter Contect no'%>
+                </div>
+            </div>
 
-  <tr>
-    <div class="field">
-      <td><%= form.label :gst_no %></td>
-      <td><%= form.text_field :gst_no %></td>
-    </div>
-  </tr>
+            <div class="col-md-6">
+                <div class="form-group ">
+                <%= form.label :gst_no %>
+                <%= form.text_field :gst_no, class: 'form-control', placeholder:'Enter GST NO' %>
+                  </div>
+                </div>
 
-  <div class="actions">
-    <td colspan="2" align="center"><%= form.submit %></td>
+            </div>
+        </div>
+        <div class="actions text-center", class: 'btn btn-primary'>
+          <%= form.submit %>
+        </div>
+      </form>
+    </div>
   </div>
-</tr>
+</div>
 <% end %>
