@@ -4,12 +4,9 @@
   </h1>
   <ol class="breadcrumb">
     <li>
-      <a href="#">
-        <i class="fa fa-dashboard"></i>
-        Home</a>
-    </li>
-    <li>
-      <a href="#">suppliers</a>
+        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li class="active">
+        <%= link_to 'supplier' %>
     </li>
   </ol>
 </section>
@@ -27,13 +24,13 @@
             <h1 align="center"></h1>
             <thead>
               <tr>
-                <th>supplier name</th>
-                <th>product name</th>
-                <th>company name</th>
-                <th>address</th>
-                <th>city name</th>
-                <th>contact no</th>
-                <th>gst no</th>
+                <th>Supplier Name</th>
+                <th>Product Name</th>
+                <th>Company Name</th>
+                <th>Address</th>
+                <th>City Name</th>
+                <th>Contact No</th>
+                <th>GST NO</th>
                 <th colspan="4">Action</th>
               </tr>
             </thead>
