@@ -1,93 +1,88 @@
 <%= form_with(model: product,local:true) do |form| %>
 <% if product.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(product.errors.count, "error") %>
-      prohibited this user from being saved:</h2>
-    <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+<div id="error_explanation">
+  <h2><%= pluralize(product.errors.count, "error") %>
+  prohibited this user from being saved:</h2>
+  <ul>
+    <% product.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
-<table class="table table stried" border="2" align="center" cellspacing="4" cellpadding="4">
-  <tr>
-    <div class="field">
-      <td><%= form.label :product_name %></td>
-      <td>
-        <%= form.text_field :product_name %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td><%= form.label :product_code %></td>
-      <td>
-        <%= form.text_field :product_code %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td><%= form.label :image %></td>
-      <td>
-        <%= image_tag product.image %>
-        <%= form.file_field :image %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :brand %></td>
-      <td><%= form.text_field :brand %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :product_category %></td>
-      <td><%= form.text_field :product_category %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :unit %></td>
-      <td><%= form.text_field :unit %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :cgst %></td>
-      <td><%= form.number_field :cgst %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :sgst %></td>
-      <td><%= form.number_field :sgst %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :product_cost %></td>
-      <td><%= form.number_field :product_cost %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="field">
-      <td>
-        <%= form.label :product_price %></td>
-      <td><%= form.number_field :product_price %></td>
-    </div>
-  </tr>
-  <tr>
-    <div class="actions">
-      <td colspan="2" align="center">
-        <%= form.submit %></td>
-    </div>
-  </tr>
-</table>
 
+<section class="content">
+  <div class="row">
+
+    <div class='col-md-12'>
+
+      <div class="box box-primary">
+
+
+        <div class="box header with -border">
+          <div class="box-body">
+
+              <div  class='col-md-6'>
+
+                <div class="form-group">
+                  <%= form.label :Product_Name %>
+                  <%= form.text_field :Product_Name, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :Product_Code %>
+                  <%= form.text_field :Product_Code, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :Image %>
+                  <%= form.file_field :Image, class: 'form-control' %>
+                </div>
+                <% if !@product.new_record? %>
+                  <div class="form-group">
+                    <%= form.label 'Image Preview' %>
+                    <%= image_tag product.image, width: 100, height: 100 %>
+                  </div>
+                <% end %>
+                <div class="form-group">
+                  <%= form.label :Brand %>
+                  <%= form.text_field :Brand, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :Product_Category %>
+                  <%= form.text_field :Product_Category, class: 'form-control' %>
+                </div>
+              </div>
+              <div class='col-md-6'>
+                <div class="form-group">
+                  <%= form.label :Unit %>
+                  <%= form.text_field :Unit, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :CGST %>
+                  <%= form.number_field :CGST, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :SGST %>
+                  <%= form.number_field :SGST, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                  <%= form.label :Product_Cost %>
+                  <%= form.number_field :Product_Cost, class: 'form-control' %>
+                </div>
+                <div class="form-group">
+                 <%= form.label :Product_Price %>
+                 <%= form.number_field :Product_Price, class: 'form-control' %>
+               </div>
+             </div>  
+             <div class="clearfix"></div>
+             <div class='col-md-6'>
+              <div class='form-group'>
+              <%= form.submit class:'btn btn-primary'%> 
+              </div>
+              </div> 
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <% end %>

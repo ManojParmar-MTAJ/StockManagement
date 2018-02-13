@@ -1,18 +1,14 @@
 <section class="content-header">
   <h1>
     Products
-    <small>advanced tables</small>
+   
   </h1>
   <ol class="breadcrumb">
     <li>
-      <a href="#">
-        <i class="fa fa-dashboard"></i>
-        Home</a>
+        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li class="active">
+        <%= link_to 'Product' %>
     </li>
-    <li>
-      <a href="#">products</a>
-    </li>
-    <li class="active"></li>
   </ol>
 </section>
 
@@ -21,6 +17,7 @@
   <div class="row">
 
     <div class="col-xs-12">
+      
       <div class="box">
 
         <div class="box-body">
@@ -29,16 +26,16 @@
           </section>
           <thead>
             <tr>
-              <th>product name</th>
-              <th>product code</th>
-              <th>image</th>
-              <th>brand</th>
-              <th>product category</th>
-              <th>unit</th>
-              <th>cgst</th>
-              <th>sgst</th>
-              <th>product cost</th>
-              <th>product price</th>
+              <th>Product name</th>
+              <th>Product code</th>
+              <th>Image</th>
+              <th>Brand</th>
+              <th>Product Category</th>
+              <th>Unit</th>
+              <th>CGST</th>
+              <th>SGST</th>
+              <th>Product Cost</th>
+              <th>Product Price</th>
               <th colspan="3">Action</th>
             </tr>
           </thead>
@@ -73,6 +70,7 @@
     </tbody>
   </table>
 
+</div>
 </div>
 </div>
 </div>
