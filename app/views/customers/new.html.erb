@@ -1,0 +1,17 @@
+<section class="content-header">
+  <h1>
+    New Customer
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+     <li>
+        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li class="active">
+        <%= link_to 'Customer' %>
+    </li>
+  </ol>
+</section>
+
+
+
+<%= render 'form', customer: @customer %>
