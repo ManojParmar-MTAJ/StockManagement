@@ -5,15 +5,11 @@
   </h1>
   <ol class="breadcrumb">
     <li>
-      <a href="#">
-        <i class="fa fa-dashboard"></i>
-        Home</a>
-    </li>
-    <li>
-      <a href="#">supplier</a>
-    </li>
-    <li class="active">New supplier</li>
-  </ol>
-</section>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+      <li class="active">
+        <%= link_to 'Supplier' %>
+      </li>
+    </ol>
+  </section>
 
-<%= render 'form', supplier: @supplier %>
+  <%= render 'form', supplier: @supplier %>
