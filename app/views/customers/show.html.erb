@@ -1,0 +1,41 @@
+.<section class="content-header">
+ <ol class="breadcrumb">
+   <li>
+    <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li class="active">
+      <%= link_to 'Customer' %>
+    </li>
+  </ol>
+</section>
+<h1 alging="center">Show Customer</h1>
+<p id="notice"><%= notice %></p>
+
+<div class="form-group">
+  <strong>Customer Name:</strong>
+  <%= @customer.customer_name %>
+</div>
+
+<div class="form-group">
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</div>
+
+<div class="form-group">
+  <strong>Phone no:</strong>
+  <%= @customer.phone_no%>
+</div>
+
+<div class="form-group">
+  <strong>Address:</strong>
+  <%= @customer.address%>
+</div>
+
+<div class="form-group">
+ <strong>City:</strong>
+ <%= @customer.city%>
+</div>
+<div class="form-group">
+
+  <td colspan="2" style="text-align: center;"><%= link_to 'Edit', edit_customer_path(@customer) %></td>
+
+</div>
