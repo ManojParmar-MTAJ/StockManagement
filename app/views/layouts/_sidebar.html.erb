@@ -14,6 +14,7 @@
       <li class="<%= activate_if_current_page(root_path) %>"><%= link_to root_path do %><i class="fa fa-dashboard"></i> Dashboard<% end %></li>
       <li class="<%= activate_if_current_page(suppliers_path) %>"><%= link_to suppliers_path do %><i class="fa fa-circle-o"></i> Suppliers<% end %></li>
       <li class="<%= activate_if_current_page(products_path) %>"><%= link_to products_path do %><i class="fa fa-circle-o"></i> Products<% end %></li>
+      <li class="<%= activate_if_current_page(stocks_path) %>"><%= link_to stocks_path do %><i class="fa fa-circle-o"></i> Stocks<% end %></li>
       <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i> Log Out<% end %></li>
     </ul>
   </section>

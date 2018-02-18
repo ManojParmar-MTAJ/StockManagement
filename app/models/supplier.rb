@@ -4,4 +4,6 @@ class Supplier < ApplicationRecord
   validates :supplier_name, length:{minimum:2,maximum: 20 }
   validates :product_name, length: { minimum: 2,maximum: 20 }
   validates :company_name, length: { minimum: 2,maximum: 20 }
+  has_many :stocks
+  has_many :product
 end

@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20180213102555) do
   end
 
   create_table "stocks", force: :cascade do |t|
-    t.string "supplier_name"
+    t.string "supplier_id"
     t.string "product_id"
     t.string "unit"
     t.string "status"

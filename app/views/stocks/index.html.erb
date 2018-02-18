@@ -4,26 +4,23 @@
   </h1>
   <ol class="breadcrumb">
     <li>
-        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
-    <li class="active">
-        <%= link_to 'stock' %>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li >
+      <%= link_to 'stock' %>
     </li>
   </ol>
 </section>
 
 <section class="content">
   <div class="row">
-
     <div class="col-md-12">
       <div class="box">
-
-
         <div class="box-body">
           <table class="table table-bordered table-hover">
             <h1 align="center"></h1>
             <thead>
               <tr>
-                <th>Supplier Name</th>
+                <th>Supplier Id</th>
                 <th>Product Id</th>
                 <th>Unit</th>
                 <th>Status</th>
@@ -32,12 +29,11 @@
                 <th colspan="4">Action</th>
               </tr>
             </thead>
-
             <tbody>
               <% @stocks.each do |stock| %>
                 <tr>
-                  <td><%= stock.supplier_name %></td>
-                  <td><%= stock.product_id %></td>
+                  <td><%= stock.supplier.supplier_name %></td>
+                  <td><%= stock.product.product_name %></td>
                   <td><%= stock.unit %></td>
                   <td><%= stock.status %></td>
                   <td><%= stock.total%></td>
@@ -56,17 +52,14 @@
             </td>
           </tr>
         <% end %>
-
       </tbody>
     </table>
-
   </div>
 </div>
 </div>
 <div class='col-md-12'>
 <%= link_to 'New Stock', new_stock_path, class: 'btn btn-primary' %>
 </div>
-
 </div>
 </section>
 <br>

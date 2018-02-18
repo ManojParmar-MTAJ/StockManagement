@@ -1,5 +1,7 @@
 class Stock < ApplicationRecord
-  validates :supplier_name,:product_id,:unit,:status,:total,:note, presence: true
+  validates :product_id,:unit,:total, presence: true
   validates :total, numericality:true
-  validates :supplier_name, length: { minimum: 2 }
+
+  belongs_to :supplier
+  belongs_to :product
 end

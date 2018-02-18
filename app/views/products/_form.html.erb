@@ -20,15 +20,15 @@
             <div  class='col-md-6'>
               <div class="form-group">
                 <%= form.label :Product_Name %>
-                <%= form.text_field :Product_Name, class: 'form-control' %>
+                <%= form.text_field :product_name, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :Product_Code %>
-                <%= form.text_field :Product_Code, class: 'form-control' %>
+                <%= form.text_field :product_code, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :Image %>
-                <%= form.file_field :Image, class: 'form-control' %>
+                <%= form.file_field :image, class: 'form-control' %>
               </div>
               <% if !@product.new_record? %>
               <div class="form-group">
@@ -38,41 +38,41 @@
               <% end %>
               <div class="form-group">
                 <%= form.label :Brand %>
-                <%= form.text_field :Brand, class: 'form-control' %>
+                <%= form.text_field :brand, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :Product_Category %>
-                <%= form.text_field :Product_Category, class: 'form-control' %>
+                <%= form.text_field :product_category, class: 'form-control' %>
               </div>
             </div>
             <div class='col-md-6'>
               <div class="form-group">
                 <%= form.label :Unit %>
-                <%= form.text_field :Unit, class: 'form-control' %>
+                <%= form.text_field :unit, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :CGST %>
-                <%= form.number_field :CGST, class: 'form-control' %>
+                <%= form.number_field :cgst, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :SGST %>
-                <%= form.number_field :SGST, class: 'form-control' %>
+                <%= form.number_field :sgst, class: 'form-control' %>
               </div>
               <div class="form-group">
                 <%= form.label :Product_Cost %>
-                <%= form.number_field :Product_Cost, class: 'form-control' %>
+                <%= form.number_field :product_cost, class: 'form-control' %>
               </div>
               <div class="form-group">
                <%= form.label :Product_Price %>
-               <%= form.number_field :Product_Price, class: 'form-control' %>
+               <%= form.number_field :product_price, class: 'form-control' %>
              </div>
-           </div>  
+           </div>
            <div class="clearfix"></div>
            <div class='col-md-6'>
             <div class='form-group'>
-              <%= form.submit class:'btn btn-primary'%> 
+              <%= form.submit class:'btn btn-primary'%>
             </div>
-          </div> 
+          </div>
         </div>
       </div>
     </div>
