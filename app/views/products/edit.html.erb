@@ -1,3 +1,15 @@
-<h1 align="center">Editing Product</h1>
+<section class="content-header">
+  <h1>
+    Edit Product
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+     <li>
+        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    <li class="active">
+        <%= link_to 'Product' %>
+    </li>
+  </ol>
+</section>
+
 <%= render 'form', product: @product %>
-<td><%= link_to 'Show', @product %></td>
