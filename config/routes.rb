@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :products
   resources :suppliers
   resources :customers
+  resources :sales
 end

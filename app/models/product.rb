@@ -6,4 +6,7 @@ class Product < ApplicationRecord
   validates :cgst,:sgst,:product_cost,:product_price, numericality: true
   validates :product_code, length: {minimum:4 }
   validates :product_name, length: { minimum: 2 ,maximum:20}
+
+  has_many :sales
+  has_many :customer
 end
