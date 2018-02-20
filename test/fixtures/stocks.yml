@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  supplier_name: MyString
+  product_id: MyString
+  unit: MyString
+  status: MyString
+  total: MyString
+  note: MyString
+
+two:
+  supplier_name: MyString
+  product_id: MyString
+  unit: MyString
+  status: MyString
+  total: MyString
+  note: MyString
