@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20180213102555) do
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.string "product_code"
+    t.string "image"
     t.string "brand"
     t.string "product_category"
     t.string "unit"
@@ -31,16 +32,13 @@ ActiveRecord::Schema.define(version: 20180213102555) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-    t.string "product_image_file_name"
-    t.string "product_image_content_type"
-    t.integer "product_image_file_size"
-    t.datetime "product_image_updated_at"
   end
 
   create_table "stocks", force: :cascade do |t|
     t.string "supplier_id"
     t.string "product_id"
     t.string "unit"
+    t.string "date"
     t.string "status"
     t.string "total"
     t.string "note"
