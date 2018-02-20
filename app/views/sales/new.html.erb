@@ -1,0 +1,16 @@
+<section class="content-header">
+  <h1>
+    New Sale
+    <small></small>
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+      <li class="active">
+        <%= link_to 'sale' %>
+      </li>
+    </ol>
+  </section>
+
+  <%= render 'form', sale: @sale %>
+
