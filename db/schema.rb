@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180215065203) do
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.string "product_code"
-    t.string "image"
     t.string "brand"
     t.string "product_category"
     t.string "unit"
@@ -50,6 +49,18 @@ ActiveRecord::Schema.define(version: 20180215065203) do
     t.string "payment_status"
     t.string "sales_date"
     t.string "unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "stocks", force: :cascade do |t|
+    t.string "supplier_id"
+    t.string "product_id"
+    t.string "unit"
+    t.string "date"
+    t.string "status"
+    t.string "total"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

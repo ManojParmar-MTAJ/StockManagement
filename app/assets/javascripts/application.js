@@ -15,4 +15,3 @@
 //= require bootstrap-sprockets
 //= require adminlte.min.js
 //= require icheck.min
-//= require bootstrap-datepicker
