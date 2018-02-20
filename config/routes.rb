@@ -9,10 +9,6 @@ Rails.application.routes.draw do
   resources :products
   resources :suppliers
   resources :customers
-<<<<<<< HEAD
   resources :stocks
-end
-=======
   resources :sales
 end
->>>>>>> sales_master
