@@ -13,10 +13,8 @@
 
 <section class="content">
   <div class="row">
-
     <div class="col-md-12">
       <div class="box">
-
         <div class="box-body">
           <table class="table table-bordered table-hover">
             <h1 align="center"></h1>
@@ -44,30 +42,28 @@
                   <td><%= supplier.contact_no %></td>
                   <td><%= supplier.gst_no %></td>
                   <td><%= link_to supplier do %>
-                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-eye" title="show"></i>
                   <% end %>
                 </td>
                 <td><%= link_to edit_supplier_path(supplier) do %>
-                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-pencil" title="Edit"></i>
                 <% end %>
               </td>
               <td><%= link_to (supplier), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash"></i>
+                <i class="fa fa-trash" title="Delete"></i>
               <% end %>
             </td>
           </tr>
         <% end %>
-
       </tbody>
     </table>
-
+    <%= paginate @suppliers %>
   </div>
 </div>
 </div>
 <div class='col-md-12'>
 <%= link_to 'New Supplier', new_supplier_path, class: 'btn btn-primary' %>
 </div>
-
 </div>
 </section>
 <br>

@@ -3,18 +3,16 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
 
   def index
-    @suppliers = Supplier.all
+    @suppliers = Supplier.all.page(params[:page]).per(5)
   end
 
   def new
     @supplier = Supplier.new
   end
 
-  def show;
-   end
+  def show; end
 
-  def edit;
-   end
+  def edit; end
 
   def create
     @supplier = Supplier.new(supplier_params)

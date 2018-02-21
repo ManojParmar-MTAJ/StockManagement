@@ -4,7 +4,7 @@ class StocksController < ApplicationController
   def edit; end
 
   def index
-    @stocks = Stock.all
+    @stocks = Stock.all.page(params[:page]).per(5)
   end
 
   def new

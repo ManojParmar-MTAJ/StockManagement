@@ -41,21 +41,22 @@
                   <td><%= stock.total%></td>
                   <td><%= stock.note %></td>
                   <td><%= link_to stock do %>
-                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-eye" title="show"></i>
                   <% end %>
                 </td>
                 <td><%= link_to edit_stock_path(stock) do %>
-                  <i class="fa fa-pencil"></i>
+                  <i class="fa fa-pencil" title="Edit"></i>
                 <% end %>
               </td>
               <td><%= link_to (stock), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash"></i>
+                <i class="fa fa-trash" title="Delete"></i>
               <% end %>
             </td>
           </tr>
         <% end %>
       </tbody>
     </table>
+    <%= paginate @stocks %>
   </div>
 </div>
 </div>

@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_product,only: [:show, :edit, :update, :destroy]
+  before_action :set_product, only: %i[show edit update destroy]
 
   def index
-    @products = Product.all
+    @products = Product.all.page(params[:page]).per(5)
   end
 
   def new
@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to @product, notice: 'product was sussfully updated.'
     else
-     render :edit
+      render :edit
     end
   end
 
@@ -44,6 +44,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:product_name,:product_code,:image,:brand,:product_category,:unit,:cgst,:sgst,:product_cost,:product_price)
+    params.require(:product).permit(:product_name, :product_code, :image, :brand, :product_category, :unit, :cgst, :sgst, :product_cost, :product_price)
   end
 end
