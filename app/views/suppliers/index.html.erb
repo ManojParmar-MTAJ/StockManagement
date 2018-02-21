@@ -35,7 +35,7 @@
 
             <tbody>
               <% @suppliers.each do |supplier| %>
-                <tr>
+               <tr id=<%= "tr_#{supplier.id}" %>>
                   <td><%= supplier.supplier_name %></td>
                   <td><%= supplier.product_name %></td>
                   <td><%= supplier.company_name %></td>
@@ -51,7 +51,7 @@
                   <i class="fa fa-pencil"></i>
                 <% end %>
               </td>
-              <td><%= link_to (supplier), method: :delete, data: { confirm: 'Are you sure?' } do%>
+              <td><%= link_to (supplier), method: :delete,remote: true, data: { confirm: 'Are you sure?' } do%>
                 <i class="fa fa-trash"></i>
               <% end %>
             </td>

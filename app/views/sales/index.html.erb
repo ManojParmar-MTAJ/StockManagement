@@ -31,11 +31,9 @@
                   <th>Unit</th>
                   <th colspan="4">Action</th>
                 </tr>
-              </thead>
-
-              <tbody>
+              </thead> <tbody>
                 <% @sales.each do |sale| %>
-                <tr>
+                <tr id=<%= "tr_#{sale.id}" %>>
                   <td><%= sale.customer.customer_name %></td>
                   <td><%= sale.product.product_name %></td>
                   <td><%= sale.payment_status %></td>
@@ -49,7 +47,7 @@
                     <i class="fa fa-pencil"></i>
                     <% end %>
                   </td>
-                  <td><%= link_to (sale), method: :delete, data: { confirm: 'Are you sure?' } do%>
+                  <td><%= link_to (sale), method: :delete,remote: true, data: { confirm: 'Are you sure?' } do%>
                     <i class="fa fa-trash"></i>
                     <% end %>
                   </td>

@@ -28,9 +28,7 @@ class SalesController < ApplicationController
    end
  end
  def destroy
-  if @sale.destroy
-    redirect_to sales_path, notice: 'sales was successfully destroyed.'
-  end
+   @sale.destroy
 end
 private
 def set_sale

@@ -34,9 +34,7 @@ class SuppliersController < ApplicationController
   end
 
   def destroy
-    if @supplier.destroy
-      redirect_to suppliers_path, notice: 'suppiler was successfully destroyed.'
-    end
+     @supplier.destroy  
   end
 
   private
