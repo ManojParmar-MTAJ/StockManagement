@@ -5,5 +5,14 @@ class Customer < ApplicationRecord
  validates :customer_name, length: { minimum: 2 , maximum: 10 }
 
   has_many :sales
-  
+
+  scope :search_customers, ->(search) { where("customer_name ILIKE ?", "%#{search}%") }
+
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
 end

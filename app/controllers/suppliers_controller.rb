@@ -3,7 +3,7 @@ class SuppliersController < ApplicationController
   before_action :set_supplier, only: %i[show edit update destroy]
 
   def index
-    @suppliers = Supplier.all.page(params[:page]).per(5)
+    @suppliers = Supplier.all.page(params[:page]).per(5).search_suppliers(params[:search])
   end
 
   def new

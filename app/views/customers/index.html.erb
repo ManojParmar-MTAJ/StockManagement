@@ -17,7 +17,15 @@
     <div class="col-xs-12">
       <div class="box">
         <div class="box-body">
-          <table class="table table-bordered table-hover"></section>
+          <table class="table table-bordered table-hover">
+            <div class="col-md-6">
+              <div class="form-group" align=right>
+                <%= form_tag customers_path, :method => 'get' do %>
+                <%= text_field_tag :search, nil,class: 'form-control' %>
+                <%= submit_tag "Search", class:'btn btn-primary' %>
+                    <% end %>
+                  </div>
+                </div>
           <thead>
             <tr>
               <th>Customer name</th>
