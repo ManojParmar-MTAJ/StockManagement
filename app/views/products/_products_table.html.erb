@@ -1,0 +1,47 @@
+<table class="table table-bordered table-hover">
+
+<thead>
+  <tr>
+    <th>Product name</th>
+    <th>Product code</th>
+    <th>Image</th>
+    <th>Brand</th>
+    <th>Product Category</th>
+    <th>Unit</th>
+    <th>CGST</th>
+    <th>SGST</th>
+    <th>Product Cost</th>
+    <th>Product Price</th>
+    <th colspan="3">Action</th>
+  </tr>
+</thead>
+<tbody>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= product.product_name %></td>
+      <td><%= product.product_code %></td>
+      <td><%= image_tag product.image(:thumb), width: '40px', height: '40px' %></td>
+      <td><%= product.brand %></td>
+      <td><%= product.product_category %></td>
+      <td><%= product.unit %></td>
+      <td><%= product.cgst%></td>
+      <td><%= product.sgst %></td>
+      <td><%= product.product_cost %></td>
+      <td><%= product.product_price %></td>
+      <td><%= link_to product do %>
+        <i class="fa fa-eye" title="show"></i>
+      <% end %>
+    </td>
+    <td><%= link_to edit_product_path(product) do %>
+      <i class="fa fa-pencil" title="Edit"></i>
+    <% end %>
+  </td>
+  <td><%= link_to (product), method: :delete, data: { confirm: 'Are you sure?' } do%>
+    <i class="fa fa-trash" title="Delete"></i>
+  <% end %>
+</td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<%= paginate @products, remote: true %>
