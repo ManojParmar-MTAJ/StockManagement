@@ -12,12 +12,25 @@
    <ul class="sidebar-menu" data-widget="tree">
     <li class="header">MAIN NAVIGATION</li>
     <li class="<%= activate_if_current_page(root_path) %>"><%= link_to root_path do %><i class="fa fa-dashboard"></i><span>Dashboard</span><% end %></li>
-    <li class="<%= activate_if_current_page(suppliers_path) %>"><%= link_to suppliers_path do %><i class="fa fa-circle-o"></i><span>Suppliers</span><% end %></li>
-    <li class="<%= activate_if_current_page(products_path) %>"><%= link_to products_path do %><i class="fa fa-circle-o"></i><span>Products</span><% end %></li>
+    <li class="<%= activate_if_current_page(suppliers_path) %>"><%= link_to suppliers_path do %><i class="fa fa-star"></i><span>Suppliers</span><% end %></li>
+    <li class="<%= activate_if_current_page(products_path) %>"><%= link_to products_path do %><i class="fa fa-barcode"></i><span>Products</span><% end %></li>
     <li class="<%= activate_if_current_page(customers_path) %>"><%= link_to customers_path do %><i class="fa fa-users"></i><span>Customers</span><% end %></li>
-    <li class="<%= activate_if_current_page(sales_path) %>"><%= link_to sales_path do %><i class="fa fa-circle-o"></i><span>Sales</span><% end %></li>
-    <li class="<%= activate_if_current_page(stocks_path) %>"><%= link_to stocks_path do %><i class="fa fa-circle-o"></i><span>Stocks</span><% end %></li>
-    <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i><span>Log Out</span><% end %></li>
-  </ul>
-</section>
+    <li class="<%= activate_if_current_page(sales_path) %>"><%= link_to sales_path do %><i class="fa fa-heart"></i><span>Sales</span><% end %></li>
+    <li class="<%= activate_if_current_page(stocks_path) %>"><%= link_to stocks_path do %><i class="fa fa-plus-circle"></i><span>Stocks</span><% end %></li>
+    <li class="treeview">
+      <a href="#">
+        <i class="fa fa-bar-chart-o"></i> <span>Reports</span>
+        <span class="pull-right-container">
+          <i class="fa fa-angle-left pull-right"></i>
+        </span>
+      </a>
+      <ul class="treeview-menu">
+        <li class="<%= activate_if_current_page(reports_products_path) %>"><%= link_to reports_products_path do %><i class="fa fa-barcode"></i><span>Products</span><% end %></li>
+        <li class="<%= activate_if_current_page(reports_sales_path) %>"><%= link_to reports_sales_path do %><i class="fa fa-heart"></i><span>Sales</span><% end %></li>
+        <li class="<%= activate_if_current_page(reports_stocks_path) %>"><%= link_to reports_stocks_path do %><i class="fa fa-plus-circle"></i><span>Stocks</span><% end %></li>
+      </ul>
+      <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i><span>Log Out</span><% end %>
+      </li>
+    </ul>
+  </section>
 </aside>

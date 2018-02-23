@@ -9,4 +9,5 @@ class Product < ApplicationRecord
 
   has_many :sales
   has_many :customer
+  has_many :stocks
 end

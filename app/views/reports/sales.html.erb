@@ -1,0 +1,52 @@
+<section class="content-header">
+  <h1>
+    Sales
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+      <li class="active">
+        <%= link_to 'sale' %>
+      </li>
+    </ol>
+  </section>
+
+  <section class="content">
+    <div class="row">
+
+      <div class="col-md-12">
+        <div class="box">
+
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <h1 align="center"></h1>
+              <thead>
+                <tr>
+                 <th>Sales Date</th>
+                 <th>Product Unit</th>
+                 <th>Grand Total</th>
+                 <th>Payment Status</th>
+                 <th>Balance</th>
+               </tr>
+             </thead>
+             <tbody>
+              <% @sales.each do |sale| %>
+              <tr>
+                <td><%= sale.sales_date %></td>
+                <td><%= sale.product.unit %></td>
+                <td><%=  Grand_total(sale) %></td> 
+                <td><%= sale.payment_status %></td>
+                <td><%= sale.unit %></td>
+              </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class='col-md-12'>
+      <%= link_to 'New sale', new_sale_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</section>
+<br>
