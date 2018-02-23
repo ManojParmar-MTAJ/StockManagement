@@ -10,7 +10,9 @@ class Product < ApplicationRecord
   has_many :sales
   has_many :customer
 
+
   scope :search_products, ->(search) { where("product_name ILIKE ?", "%#{search}%") }
+
 
 def self.search(search)
   if search

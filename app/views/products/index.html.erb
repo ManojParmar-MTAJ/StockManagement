@@ -16,7 +16,12 @@
 <section class="content">
   <div class="row">
     <div class="col-xs-12">
+
       <div class="box">
+        <div class='col-md-offset-6 col-md-6' >
+        <%=text_field_tag :search, nil,class: 'form-control',placeholder:'Search for Product names..'%>
+         <span class="fa fa-search"></span>
+      </div>
         <div class="box-body" id='products_div'>
           <%= render 'products_table' %>
 </div>
@@ -27,4 +32,12 @@
 <%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>
 </div>
 </section>
-<br>
+<script>
+$('#search').on('keyup', function(){
+  $.ajax({
+    url: 'products',
+    dataType: 'script',
+    data: {search: $(this).val()}
+  })
+})
+</script>

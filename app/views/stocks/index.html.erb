@@ -15,56 +15,14 @@
   <div class="row">
     <div class="col-md-12">
       <div class="box">
-        <div class="box-body">
-          <table class="table table-bordered table-hover">
-            <div class="col-md-6">
-              <div class="form-group" align=right>
-                <%= form_tag stocks_path, :method => 'get' do %>
-                <%= text_field_tag :search, nil,class: 'form-control' %>
-                <%= submit_tag "Search", class:'btn btn-primary' %>
-                    <% end %>
-                  </div>
-                </div>
-            <h1 align="center"></h1>
-            <thead>
-              <tr>
-                <th>Supplier Id</th>
-                <th>Product Id</th>
-                <th>Unit</th>
-                <th>Date</th>
-                <th>Status</th>
-                <th>Total</th>
-                <th>Note</th>
-                <th colspan="4">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @stocks.each do |stock| %>
-                <tr>
-                  <td><%= stock.supplier.supplier_name %></td>
-                  <td><%= stock.product.product_name %></td>
-                  <td><%= stock.unit %></td>
-                  <td><%= stock.date %></td>
-                  <td><%= stock.status %></td>
-                  <td><%= stock.total%></td>
-                  <td><%= stock.note %></td>
-                  <td><%= link_to stock do %>
-                    <i class="fa fa-eye" title="show"></i>
-                  <% end %>
-                </td>
-                <td><%= link_to edit_stock_path(stock) do %>
-                  <i class="fa fa-pencil" title="Edit"></i>
-                <% end %>
-              </td>
-              <td><%= link_to (stock), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash" title="Delete"></i>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-    <%= paginate @stocks %>
+        <div class='col-md-offset-6 col-md-6' >
+        <%=text_field_tag :search, nil,class: 'form-control',placeholder:'Search for supplier id..'%>
+         <span class="fa fa-search"></span>
+      </div>
+        <div class="box-body" id='stocks_div'>
+          <%= render 'stocks_table' %>
+
+
   </div>
 </div>
 </div>
@@ -73,4 +31,12 @@
 </div>
 </div>
 </section>
-<br>
+<script>
+$('#search').on('keyup', function(){
+  $.ajax({
+    url: 'stocks',
+    dataType: 'script',
+    data: {search: $(this).val()}
+  })
+})
+</script>
