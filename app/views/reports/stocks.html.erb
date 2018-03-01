@@ -29,21 +29,22 @@
                 <tbody>
                   <% @stocks.each do |stock| %>
                   <tr>
-                    <td><%= stock.supplier.supplier_name %></td>
-                    <td><%= stock.product.product_code %></td>
-                    <td><%= stock.unit %></td>
-                    <td><%= stock.status %></td>
-                    <td><%= stock.total%></td>
-                  </tr>
-                  <% end %>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div class='col-md-12'>
-          <%= link_to 'New Stock', new_stock_path, class: 'btn btn-primary' %>
-        </div>
+                   <td><%= link_to stock.supplier.supplier_name.capitalize, show_stock_report_path(stock), remote: true %></td>
+                   <td><%= stock.product.product_code %></td>
+                   <td><%= stock.unit %></td>
+                   <td><%= stock.status %></td>
+                   <td><%= stock.total%></td>
+                 </tr>
+                 <% end %>
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+       <div class='col-md-12'>
+        <%= link_to 'New Stock', new_stock_path, class: 'btn btn-primary' %>
       </div>
-    </section>
-    <br>
+    </div>
+    <div class="modal fade" id="stock_modal"></div>
+  </section>
+  <br>

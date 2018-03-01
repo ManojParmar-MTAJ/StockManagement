@@ -32,7 +32,7 @@
              <tbody>
               <% @sales.each do |sale| %>
               <tr>
-                <td><%= sale.sales_date %></td>
+                <td><%= link_to sale.sales_date,show_sale_report_path(sale),remote: true %></td>
                 <td><%= sale.product.unit %></td>
                 <td><%=  Grand_total(sale) %></td> 
                 <td><%= sale.payment_status %></td>
@@ -48,5 +48,6 @@
       <%= link_to 'New sale', new_sale_path, class: 'btn btn-primary' %>
     </div>
   </div>
+   <div class="modal fade" id="sale_modal"></div>
 </section>
 <br>

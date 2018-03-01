@@ -32,13 +32,12 @@
             <tbody>
               <% @products.each do |product| %>
               <tr>
-                <td><%= product.product_name %></td>
+                <td><%= link_to product.product_name.capitalize, show_product_report_path(product), remote: true %></td>
                 <td><%= product.product_code %></td>
                 <td>(<%= product.stocks.pluck(:unit).compact.sum %>) <%= product.product_cost %></td>
                 <td><%= product.sales.pluck(:unit).compact.sum %></td>
                 <td><%= find_profit(product) %></td>
                 <td><%= find_loss(product) %></td>
-               
               </tr>
               <% end %>
             </tbody>
@@ -50,5 +49,6 @@
   <div class='col-md-12'>
     <%= link_to 'New Product', new_product_path, class: 'btn btn-primary' %>
   </div>
+  <div class="modal fade" id="product_modal"></div>
 </section>
-<br>
+
