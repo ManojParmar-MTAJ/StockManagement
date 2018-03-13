@@ -5,5 +5,11 @@ class Customer < ApplicationRecord
  validates :customer_name, length: { minimum: 2 , maximum: 10 }
 
   has_many :sales
+
+
+
+
+  # belongs_to :sale
+  has_many :products, through: :sales
   
 end

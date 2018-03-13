@@ -5,4 +5,11 @@ class Sale < ApplicationRecord
   belongs_to :customer
   belongs_to :product
 
+
+  # has_many :customers
+  # has_many :products
+  
+  
+
+
 end

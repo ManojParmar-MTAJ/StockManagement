@@ -1,0 +1,66 @@
+<section class="content-header">
+  <h1>
+    Customer
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+      <li class="active">
+        <%= link_to 'Customer' %>
+      </li>
+    </ol>
+  </section>
+  
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <h1 align="center"></h1>
+              <thead>
+                <tr>
+                  <th>Customer name</th>
+                  <th>Phone_no</th>
+                  <th>Address</th>
+                  <th>City</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @customers.each do |customer| %>
+            <tr data-toggle="collapse" data-target='<%= ".customer_#{customer.id}"%>'>
+              <td class="info"><%= customer.customer_name %></td>       
+              <td  class="info"><%= customer.phone_no %></td>
+              <td  class="info"><%= customer.address  %></td>
+              <td  class="info"><%= customer.city %></td>
+            </tr>
+            <% if customer.products.present? %>
+            <tr class='collapse <%= "customer_#{customer.id}"%>'>
+              <td class='success'><strong>Customer Sales</strong></td>
+              <td class='success'><strong>Product Name</strong></td>
+              <td class='success'><strong>Unit</strong></td>
+              <td class='success'><strong>product Price</strong></td>
+            </tr>
+
+            <% customer.products.each do |product| %>
+            <tr class='collapse <%= "customer_#{customer.id}"%>'>
+              <td></td>
+              <td class='danger'><%= product.product_name %></td>
+              <td class='danger'><%= product.unit %></td>
+              <td class='danger'><%= product.product_price %></td>
+            </tr>
+            <% end %>
+            <% end %>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class='col-md-12'>
+    <%= link_to 'New Customer', new_customer_path, class: 'btn btn-primary' %>
+  </div>
+</div>
+</div>
+</section>
+<br>

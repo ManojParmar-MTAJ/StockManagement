@@ -8,5 +8,12 @@ class Product < ApplicationRecord
   validates :product_name, length: { minimum: 2 ,maximum:20}
 
   has_many :sales
-  has_many :customer
+  has_many :customers
+
+  has_many :customers
+  has_many :sales
+  
+  
+
+
 end
