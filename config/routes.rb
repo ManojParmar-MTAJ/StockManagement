@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   get 'reports/stocks' => 'reports#stocks'
   get 'reports/show_product_report/:id' => 'reports#show_product_report', as: 'show_product_report'
   get 'reports/show_sale_report/:id' => 'reports#show_sale_report', as: 'show_sale_report'
-    get 'reports/show_stock_report/:id' => 'reports#show_stock_report', as: 'show_stock_report'
+  get 'reports/show_stock_report/:id' => 'reports#show_stock_report', as: 'show_stock_report'
 end

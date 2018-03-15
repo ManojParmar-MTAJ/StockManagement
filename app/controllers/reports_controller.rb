@@ -24,3 +24,5 @@ class ReportsController < ApplicationController
     @stock = Stock.find(params[:id])
   end
 end
+
+

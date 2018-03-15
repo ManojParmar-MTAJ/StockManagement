@@ -11,70 +11,75 @@
             <div class="box box-primary">
              <div class="box header with -border">
               <div class="box-body">
-               <div  class='col-md-6'> 
+               
                 <div class="modal-body">
+                  <div  class='col-md-6'> 
+                    
+                    <div>
+                     
+                      <%= image_tag @product.image , height: 200, width: 200 %>
+                    </div>
+                  </div>
 
-                 <div class="form-group">
-                  <strong> Name:</strong>
-                  <%= @product.product_name %>
+                  
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <strong>Brand:</strong>
+                      <%= @product.brand%>
+                    </div>
+
+
+                    <div class="form-group">
+                      <strong>Product Category:</strong>
+                      <%= @product.product_category%>
+                    </div>
+
+                    <div class="form-group">
+                     <strong>Unit:</strong>
+                     <%= @product.unit%>
+                   </div>
+                   
+
+
+
+                   <div class="form-group">
+                    <strong>CGST:</strong>
+                    <%= @product.cgst%>
+
+                    <div class="form-group">
+                      <strong>SGST:</strong>a
+                      <%= @product.sgst%>
+                    </div>
+
+                    <div class="form-group">
+                     <strong>Product Cost:</strong>
+                     <%= @product.product_cost%>
+                   </div>
+
+                   <div class="form-group">
+                    <strong>Product Price:</strong>
+                    <%= @product.product_price%>
+                  </div>
                 </div>
-
-                <div class="form-group">
-                  <strong> Code:</strong>
-                  <%= @product.product_code %>
-                </div>
-
-                <div>
-                  <strong>Image:</strong>
-                  <%= image_tag @product.image ,width: 100, hight: 100 %>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <strong>Brand:</strong>
-                  <%= @product.brand%>
-                </div>
-
-                <div class="form-group">
-                  <strong> Category:</strong>
-                  <%= @product.product_category%>
-                </div>
-
-                <div class="form-group">
-                 <strong>Unit:</strong>
-                 <%= @product.unit%>
-               </div>
-
-               <div class="form-group">
-                <strong>CGST:</strong>
-                <%= @product.cgst%>
-
-                <div class="form-group">
-                  <strong>SGST:</strong>
-                  <%= @product.sgst%>
-                </div>
-
-                <div class="form-group">
-                 <strong> Cost:</strong>
-                 <%= @product.product_cost%>
-               </div>
-
-               <div class="form-group">
-                <strong> Price:</strong>
-                <%= @product.product_price%>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <div class="modal-footer">
+      <div class="row no-print">
+        <div class="col-xs-12">
+          <a href="invoice-print.html" target="_blank" class="btn btn-default"><i class="fa fa-print"></i> Print</a>
+          <button type="button" class="btn btn-success pull-right"><i class="fa fa-credit-card"></i> Submit Payment
+          </button>
+          <button type="button" class="btn btn-primary pull-right" style="margin-right: 5px;">
+            <i class="fa fa-download"></i> Generate PDF
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-<div class="modal-footer">
-  <button type="button" class="btn btn-default pull-left" data-dismiss="modal">Close</button>
-  <button type="button" class="btn btn-primary">Save changes</button>
-</div>
-</div>
-</div>
 </section>
+
