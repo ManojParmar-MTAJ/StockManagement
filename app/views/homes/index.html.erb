@@ -1,73 +1,73 @@
 <section class="content-header">
-      <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
-      </ol>
-    </section>
+  <h1>
+    Dashboard
+    <small>Control panel</small>
+  </h1>
+  <ol class="breadcrumb">
+    <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+    <li class="active">Dashboard</li>
+  </ol>
+</section>
 <div class="col-md-12">
   <div class="col-md-4">
-<div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
+    <div class="small-box bg-aqua">
+      <div class="inner">
+        <h3>150</h3>
 
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <div class="col-md-4">
-        <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
+        <p>New Orders</p>
       </div>
-         <div id="myfirstchart" style="height: 250px; width: 500px;"></div>
+      <div class="icon">
+        <i class="ion ion-bag"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
     </div>
-    <%= render 'layouts/footer' %>
   </div>
-  <div class="col-md-12">
-    <div class="col-md-6">
+  <div class="col-md-4">
+    <div class="small-box bg-green">
+      <div class="inner">
+        <h3>53<sup style="font-size: 20px">%</sup></h3>
+
+        <p>Bounce Rate</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-stats-bars"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="small-box bg-yellow">
+      <div class="inner">
+        <h3>44</h3>
+
+        <p>User Registrations</p>
+      </div>
+      <div class="icon">
+        <i class="ion ion-person-add"></i>
+      </div>
+      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+    </div>
+  </div>
+</div>
+<div id="myfirstchart" style="height: 250px; width: 500px;"></div>
+</div>
+<%= render 'layouts/footer' %>
+</div>
+<div class="col-md-12">
+  <div class="col-md-6">
    <script type="text/javascript">
 
-  new Morris.Bar({
+    new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'myfirstchart',
   // Chart data records -- each entry in this array corresponds to a point on
   // the chart.
   data: [
-    { year: '2008', value: 20 },
-    { year: '2009', value: 10 },
-    { year: '2010', value: 5 },
-    { year: '2011', value: 5 },
-    { year: '2012', value: 20 }
+  { year: '2008', value: 20 },
+  { year: '2009', value: 10 },
+  { year: '2010', value: 5 },
+  { year: '2011', value: 5 },
+  { year: '2012', value: 20 }
   ],
   // The name of the data record attribute that contains x-values.
   xkey: 'year',

@@ -14,20 +14,17 @@
                
                 <div class="modal-body">
                   <div  class='col-md-6'> 
-                    
-                    <div>
-                     
+                     <div>
+
                       <%= image_tag @product.image , height: 200, width: 200 %>
                     </div>
                   </div>
 
-                  
                   <div class="col-md-6">
                     <div class="form-group">
                       <strong>Brand:</strong>
                       <%= @product.brand%>
                     </div>
-
 
                     <div class="form-group">
                       <strong>Product Category:</strong>
@@ -39,28 +36,24 @@
                      <%= @product.unit%>
                    </div>
                    
-
-
-
                    <div class="form-group">
                     <strong>CGST:</strong>
-                    <%= @product.cgst%>
+                    <%= @product.cgst %>%
 
                     <div class="form-group">
-                      <strong>SGST:</strong>a
-                      <%= @product.sgst%>
+                      <strong>SGST:</strong>
+                      <%= @product.sgst%>%
                     </div>
 
                     <div class="form-group">
                      <strong>Product Cost:</strong>
-                     <%= @product.product_cost%>
-                   </div>
+                     <%= number_to_rupees(@product.product_cost) %>
+                    </div>
 
                    <div class="form-group">
                     <strong>Product Price:</strong>
-                    <%= @product.product_price%>
+                    <%= number_to_rupees(@product.product_price) %>
                   </div>
-                </div>
               </div>
             </div>
           </div>
@@ -82,4 +75,3 @@
   </div>
 </div>
 </section>
-

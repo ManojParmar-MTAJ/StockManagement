@@ -28,22 +28,22 @@ class CustomersController < ApplicationController
       redirect_to @customer, notice: 'customer was sussfully updated.'
     else
      render :edit
-    end
-  end
+   end
+ end
 
-  def destroy
-    if @customer.destroy
-      redirect_to customers_path, notice: 'customer was successfully destroyed.'
-    end
+ def destroy
+  if @customer.destroy
+    redirect_to customers_path, notice: 'customer was successfully destroyed.'
   end
+end
 
-  private
+private
 
-  def set_customer
-    @customer = Customer.find(params[:id])
-  end
+def set_customer
+  @customer = Customer.find(params[:id])
+end
 
-  def customer_params
-    params.require(:customer).permit(:customer_name,:email,:phone_no,:address,:city)
-  end
+def customer_params
+  params.require(:customer).permit(:customer_name,:email,:phone_no,:address,:city)
+end
 end

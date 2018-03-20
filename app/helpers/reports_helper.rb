@@ -11,4 +11,8 @@
   def Grand_total(sale)
    number_to_currency((sale.product.product_price * sale.unit) ,unit: 'Rs. ') 
  end
+
+ def number_to_rupees(number)
+   number_to_currency(number, unit: 'Rs. ') 
+ end
 end

@@ -1,16 +1,16 @@
 <%= form_with(model: supplier, local: true) do |form| %>
 <% if supplier.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(supplier.errors.count, "error") %>
-      prohibited this supplier from being saved:
-    </h2>
+<div id="error_explanation">
+  <h2><%= pluralize(supplier.errors.count, "error") %>
+    prohibited this supplier from being saved:
+  </h2>
 
-    <ul>
-      <% supplier.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-  </div>
+  <ul>
+    <% supplier.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
 
 <section class="content">
@@ -63,10 +63,10 @@
             <div class="clearfix"></div>
             <div class='col-md-6'>
               <%= form.submit class: 'btn btn-primary'%></div>
+            </div>
           </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</section>
-<% end %>
+  </section>
+  <% end %>

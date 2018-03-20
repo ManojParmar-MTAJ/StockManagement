@@ -28,22 +28,22 @@ class ProductsController < ApplicationController
       redirect_to @product, notice: 'product was sussfully updated.'
     else
      render :edit
-    end
-  end
+   end
+ end
 
-  def destroy
-    if @product.destroy
-      redirect_to products_path, notice: 'product was successfully destroyed.'
-    end
+ def destroy
+  if @product.destroy
+    redirect_to products_path, notice: 'product was successfully destroyed.'
   end
+end
 
-  private
+private
 
-  def set_product
-    @product = Product.find(params[:id])
-  end
+def set_product
+  @product = Product.find(params[:id])
+end
 
-  def product_params
-    params.require(:product).permit(:product_name,:product_code,:image,:brand,:product_category,:unit,:cgst,:sgst,:product_cost,:product_price)
-  end
+def product_params
+  params.require(:product).permit(:product_name,:product_code,:image,:brand,:product_category,:unit,:cgst,:sgst,:product_cost,:product_price)
+end
 end

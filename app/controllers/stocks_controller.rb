@@ -19,8 +19,8 @@ class StocksController < ApplicationController
       redirect_to @stock, notice: 'stock was successfully created'
     else
       render :new
+    end
   end
-      end
 
   def update
     if @stock.update(stock_params)
