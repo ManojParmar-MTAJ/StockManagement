@@ -22,6 +22,6 @@ CUSTOMERS = [
   {customer_name: 'qstru', email: 'qstru@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'}
 ]
 
-SUPPLIERS.each{|supplier| Supplier.find_or_create_by!(supplier_name: supplier[:supplier_name])}
-PRODUCTS.each{|product| Product.find_or_create_by!(product_name: product[:product_name])}
-CUSTOMERS.each{|customer| Customer.find_or_create_by!(customer_name: customer[:customer_name])}
+SUPPLIERS.each{|supplier| Supplier.find_or_create_by!(supplier)}
+PRODUCTS.each{|product| Product.find_or_create_by!(product)}
+CUSTOMERS.each{|customer| Customer.find_or_create_by!(customer)}
