@@ -1,0 +1,40 @@
+<table class="table table-bordered table-hover">
+  <h1 align="center"></h1>
+  <thead>
+    <tr>
+      <th>Sale Id</th>
+      <th>Customer Id</th>
+      <th>Product Id</th>
+      <th>SalesReturn Date</th>
+      <th>Unit</th>
+      <th>Price</th>
+      <th colspan="4">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @salesReturns.each do |salesReturn| %>
+          <tr id='tr_<%= salesReturn.id %>'>
+        <td><%= salesReturn.sale.id %></td>
+        <td><%= salesReturn.customer.customer_name %></td>
+        <td><%= salesReturn.product.id%></td>
+        <td><%= salesReturn.salesreturn_date %></td>
+        <td><%= salesReturn.sale.unit %></td>
+        <td><%= salesReturn.product.product_price%></td>
+        <td><%= link_to salesReturn do %>
+          <i class="fa fa-eye"></i>
+        <% end %>
+      </td>
+      <td><%= link_to edit_sales_return_path(salesReturn) do %>
+        <i class="fa fa-pencil"></i>
+      <% end %>
+    </td>
+    <td><%= link_to (salesReturn), method: :delete, data: { confirm: 'Are you sure?' } do%>
+      <i class="fa fa-trash"></i>
+    <% end %>
+  </td>
+</tr>
+<% end %>
+</tbody>
+</table>
+<%= paginate @salesReturns, remote: true%>
