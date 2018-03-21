@@ -32,14 +32,13 @@
         <%= link_to 'New Customer', new_customer_path, class: 'btn btn-primary' %>
       </div>
     </div>
-  </div>
-</section>
-<script>
-  $('#search_customers').click(function(){
-    $.ajax({
-      url: 'customers',
-      dataType: 'script',
-      data: {search: $('#search_customers_txt').val()}
+  </section>
+  <script>
+    $('#search_customers').click(function(){
+      $.ajax({
+        url: 'customers',
+        dataType: 'script',
+        data: {search: $('#search_customers_txt').val()}
+      })
     })
-  })
-</script>
+  </script>
