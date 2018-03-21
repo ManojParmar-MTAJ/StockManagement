@@ -28,7 +28,6 @@ ActiveRecord::Schema.define(version: 20180312084216) do
   create_table "products", force: :cascade do |t|
     t.string "product_name"
     t.string "product_code"
-    t.string "image"
     t.string "brand"
     t.string "product_category"
     t.string "unit"
@@ -45,8 +44,8 @@ ActiveRecord::Schema.define(version: 20180312084216) do
   end
 
   create_table "sales", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "product_id"
+    t.string "customer_id"
+    t.string "product_id"
     t.string "payment_status"
     t.string "sales_date"
     t.datetime "created_at", null: false
