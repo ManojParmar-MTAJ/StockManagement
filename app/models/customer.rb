@@ -5,7 +5,7 @@ class Customer < ApplicationRecord
  validates :customer_name, length: { minimum: 2 , maximum: 10 }
 
   has_many :sales, dependent: :destroy
-
+has_many :products, through: :sales
   scope :search_customers, ->(search) { where("customer_name ILIKE ?", "%#{search}%") }
 
 def self.search(search)

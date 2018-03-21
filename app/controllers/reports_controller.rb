@@ -8,6 +8,14 @@ class ReportsController < ApplicationController
     @products = Product.all
   end
 
+  def customers
+    @customers = Customer.all 
+  end
+
+  def show_customer_report
+    @customer = Customer.find(params[:id])
+  end
+
   def stocks
     @stocks = Stock.all
   end

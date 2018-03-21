@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   resources :sales
   resources :sales_returns
 
-
+  get 'reports/customers' => 'reports#customers'
   get 'reports/sales' => 'reports#sales'
   get 'reports/products' => 'reports#products'
   get 'reports/stocks' => 'reports#stocks'
