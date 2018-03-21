@@ -7,10 +7,6 @@ class Product < ApplicationRecord
   validates :product_code, length: { minimum: 4 }
   validates :product_name, length: { minimum: 2, maximum: 20 }
 
-  product = Product.new
-  product.valid?
-  product.errors.details[:product_name]
-
   has_many :sales
   has_many :customer
   has_many :stocks
