@@ -4,7 +4,6 @@
     <h2><%= pluralize(@salesReturn.errors.count, "error") %>
       prohibited this salesReturn from being saved:
     </h2>
-
     <ul>
       <% @salesReturn.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -15,39 +14,36 @@
 
 <section class="content">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
       <div class="box box-primary">
         <div class="box-header with-border"></div>
         <form role="form">
           <div class="box-body">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <%= form.label :sale_id %>
-                <%= form.select :sale_id, Sale.pluck(:id, :id), class: 'form-control', prompt: 'Select sale' %>
+                <%= form.select :sale_id, Sale.pluck(:id, :id), {prompt: 'Select Sale'}, {class: 'form-control'} %>
               </div>
               <div class="form-group ">
                 <%= form.label :customer_id %>
-                 <%= form.select :customer_id, Customer.pluck(:customer_name, :id), class: 'form-control', prompt: 'Select Customer' %>
+                 <%= form.select :customer_id, Customer.pluck(:customer_name, :id), {prompt: 'Select Customer'}, {class: 'form-control'}  %>
               </div>
               <div class="form-group ">
                 <%= form.label :product_id %>
-                <%= form.select :product_id, Product.pluck(:product_name, :id), class: 'form-control', prompt: 'Select product' %>
+                <%= form.select :product_id, Product.pluck(:product_name, :id), {prompt: 'Select Product'}, {class: 'form-control'}  %>
               </div>
               <div class="form-group ">
-                <%= form.label :salesreturn_date %>
+                <%= form.label :sales_return_date, 'Sales Return Date' %>
                 <%= form.date_field :salesreturn_date,class: 'form-control', placeholder:'yyyy/mm/dd'%>
                 </div>
               <div class="form-group ">
                 <%= form.label :unit %>
-                <%= form.select :unit, Sale.pluck(:unit, :id), class: 'form-control', prompt: 'Select unit' %>
+                <%= form.select :unit, Sale.pluck(:unit, :id), {prompt: 'Select Unit'}, {class: 'form-control'}  %>
               </div>
-            </div>
-            <div class="col-md-6">
               <div class="form-group ">
               <%= form.label :price %>
-             <%= form.select :price, Product.pluck(:product_price, :id), class: 'form-control', prompt: 'Select product' %>
+             <%= form.select :price, Product.pluck(:product_price, :id), {prompt: 'Select Product'}, {class: 'form-control'} %>
               </div>
-            </div>
             <div class="clearfix"></div>
             <div class='col-md-6'>
               <%= form.submit class: 'btn btn-primary'%></div>
@@ -56,5 +52,6 @@
       </form>
     </div>
   </div>
+</div>
 </section>
 <% end %>

@@ -15,25 +15,25 @@
 
 <section class="content">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-offset-3 col-md-6 col-md-offset-3">
       <div class="box box-primary">
         <div class="box-header with-border"></div>
         <form role="form">
           <div class="box-body">
-            <div class="col-md-6">
+            <div class="col-md-12">
               <div class="form-group">
                 <%= form.label :customer_id %>
-                <%= form.select :customer_id, Customer.pluck(:customer_name, :id), class: 'form-control', prompt: 'Select Customer' %>
+                <%= form.select :customer_id, Customer.pluck(:customer_name, :id), {prompt: 'Select Customer'}, {class: 'form-control'} %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :product_id %>
-                <%= form.select :product_id, Product.pluck(:product_name, :id), class: 'form-control', prompt: 'Select Product' %>
+                <%= form.select :product_id, Product.pluck(:product_name, :id), {prompt: 'Select Product'}, {class: 'form-control'} %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :payment_status %>
-                <%= form.select :payment_status, ['Pending','Received' ], :prompt => 'Select One' %>
+                <%= form.select :payment_status, ['Pending','Received' ], {prompt: 'Select Payment Status'}, {class: 'form-control'} %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :sales_date %>
                 <%= form.date_field :sales_date , value: sale.sales_date,class: 'form-control', placeholder:'yyyy/mm/dd'%>
               </div>
