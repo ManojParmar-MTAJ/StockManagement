@@ -5,4 +5,15 @@ class Sale < ApplicationRecord
   belongs_to :customer
   belongs_to :product
 
+
+
+  scope :search_sales, ->(search) { where("customer_id ILIKE ?", "%#{search}%") }
+
+  def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+  end
 end

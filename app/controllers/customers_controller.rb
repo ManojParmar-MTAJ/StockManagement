@@ -1,9 +1,9 @@
 class CustomersController < ApplicationController
-  before_action :authenticate_user! 
-  before_action :set_customer,only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
+  before_action :set_customer, only: %i[show edit update destroy]
 
   def index
-    @customers = Customer.all
+    @customers = Customer.all.page(params[:page]).per(5).search_customers(params[:search])
   end
 
   def new
@@ -27,7 +27,7 @@ class CustomersController < ApplicationController
     if @customer.update(customer_params)
       redirect_to @customer, notice: 'customer was sussfully updated.'
     else
-     render :edit
+      render :edit
     end
   end
 
@@ -44,6 +44,6 @@ class CustomersController < ApplicationController
   end
 
   def customer_params
-    params.require(:customer).permit(:customer_name,:email,:phone_no,:address,:city)
+    params.require(:customer).permit(:customer_name, :email, :phone_no, :address, :city)
   end
 end

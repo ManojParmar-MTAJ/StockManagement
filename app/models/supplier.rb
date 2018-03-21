@@ -6,4 +6,14 @@ class Supplier < ApplicationRecord
   validates :company_name, length: { minimum: 2,maximum: 20 }
   has_many :stocks
   has_many :product
+
+  scope :search_suppliers, ->(search) { where("supplier_name ILIKE ?", "%#{search}%") }
+
+def self.search(search)
+  if search
+    find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+  else
+    find(:all)
+  end
+end
 end
