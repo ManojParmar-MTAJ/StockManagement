@@ -6,9 +6,7 @@ class Sale < ApplicationRecord
   belongs_to :product
   has_many  :sales_returns
 
-
-
-  scope :search_sales, ->(search) { where("customer_id ILIKE ?", "%#{search}%") }
+  scope :search_sales, ->(search) { joins(:customer).where('customers.customer_name ilike :name', name: "%#{search}%") }
 
   def self.search(search)
   if search

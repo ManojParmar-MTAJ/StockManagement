@@ -2,7 +2,8 @@ class SalesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_sale, only: %i[show edit update destroy]
   def index
-    @sales = Sale.all.page(params[:page]).per(5).search_sales(params[:search])
+    @sales = Sale.all.page(params[:page]).per(5)
+    @sales = Sale.search_sales(params[:search]).page(params[:page]).per(5) if params[:search].present?
   end
 
   def new
