@@ -17,7 +17,7 @@
 </thead>
 <tbody>
   <% @products.each do |product| %>
-    <tr>
+    <tr id='tr_<%= product.id %>'>
       <td><%= product.product_name %></td>
       <td><%= product.product_code %></td>
       <td><%= image_tag product.image(:thumb), width: '40px', height: '40px' %></td>
@@ -36,7 +36,7 @@
       <i class="fa fa-pencil" title="Edit"></i>
     <% end %>
   </td>
-  <td><%= link_to (product), method: :delete, data: { confirm: 'Are you sure?' } do%>
+  <td><%= link_to (product), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do%>
     <i class="fa fa-trash" title="Delete"></i>
   <% end %>
 </td>

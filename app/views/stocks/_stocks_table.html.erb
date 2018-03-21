@@ -14,7 +14,7 @@
   </thead>
   <tbody>
     <% @stocks.each do |stock| %>
-      <tr>
+      <tr id='tr_<%= stock.id %>'>
         <td><%= stock.supplier.supplier_name %></td>
         <td><%= stock.product.product_name %></td>
         <td><%= stock.unit %></td>
@@ -30,7 +30,7 @@
         <i class="fa fa-pencil" title="Edit"></i>
       <% end %>
     </td>
-    <td><%= link_to (stock), method: :delete, data: { confirm: 'Are you sure?' } do%>
+    <td><%= link_to (stock), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do%>
       <i class="fa fa-trash" title="Delete"></i>
     <% end %>
   </td>

@@ -10,32 +10,34 @@
       </li>
     </ol>
   </section>
-
-<section class="content">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="box">
-        <div class='col-md-offset-6 col-md-6' >
-        <%=text_field_tag :search, nil,class: 'form-control',placeholder:'Search for supplier names..'%>
-         <span class="fa fa-search"></span>
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class='col-md-offset-8 col-md-4 mar-tp-btm-5' >
+            <div class="input-group">
+              <%=text_field_tag :search_supplier_txt, nil,class: 'form-control',placeholder:'Search Suppliers'%>
+              <span class="input-group-btn">
+                <button type="submit" id='search_supplier' class="btn btn-primary btn-flat">Search</button>
+              </span>
+            </div>
+          </div>
+          <div class="box-body" id='suppliers_div'>
+            <%= render 'suppliers_table' %>
+          </div>
+        </div>
       </div>
-        <div class="box-body" id='suppliers_div'>
-          <%= render 'suppliers_table' %>
-
-  </div>
-</div>
-</div>
-<div class='col-md-12'>
-<%= link_to 'New Supplier', new_supplier_path, class: 'btn btn-primary' %>
-</div>
-</div>
-</section>
-<script>
-$('#search').on('keyup', function(){
-  $.ajax({
-    url: 'suppliers',
-    dataType: 'script',
-    data: {search: $(this).val()}
-  })
-})
-</script>
+      <div class='col-md-12'>
+        <%= link_to 'New Supplier', new_supplier_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </section>
+  <script>
+    $('#search_supplier').click(function(){
+      $.ajax({
+        url: 'suppliers',
+        dataType: 'script',
+        data: {search: $('#search_supplier_txt').val()}
+      })
+    })
+  </script>

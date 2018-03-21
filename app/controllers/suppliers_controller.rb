@@ -32,7 +32,7 @@ class SuppliersController < ApplicationController
   end
 
   def destroy
-     @supplier.destroy  
+    @supplier.destroy  
   end
 
   private
