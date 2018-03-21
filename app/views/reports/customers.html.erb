@@ -25,6 +25,7 @@
                   <th>Address</th>
                   <th>City</th>
             </tr>
+            <%= link_to "PDF file",reports_customers_path(format: 'pdf') %>
           </thead>
           <tbody>
             <% @customers.each do |customer| %>

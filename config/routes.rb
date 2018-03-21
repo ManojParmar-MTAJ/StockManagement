@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :customers
   resources :stocks
   resources :sales
+  # resources :reports
 
   # get 'reports/sales' => 'reports#sales'
   # get 'reports/products' => 'reports#products'
