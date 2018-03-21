@@ -29,6 +29,7 @@
         <li class="<%= activate_if_current_page(reports_products_path) %>"><%= link_to reports_products_path do %><i class="fa fa-barcode"></i><span>Products</span><% end %></li>
         <li class="<%= activate_if_current_page(reports_sales_path) %>"><%= link_to reports_sales_path do %><i class="fa fa-heart"></i><span>Sales</span><% end %></li>
         <li class="<%= activate_if_current_page(reports_stocks_path) %>"><%= link_to reports_stocks_path do %><i class="fa fa-plus-circle"></i><span>Stocks</span><% end %></li>
+        <li class="<%= activate_if_current_page(reports_customers_path) %>"><%= link_to reports_customers_path do %><i class="fa fa-plus-circle"></i><span>Customers</span><% end %></li>
       </ul>
       <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i><span>Log Out</span><% end %>
       </li>
