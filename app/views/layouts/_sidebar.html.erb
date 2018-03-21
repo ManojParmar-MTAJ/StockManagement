@@ -17,6 +17,8 @@
     <li class="<%= activate_if_current_page(customers_path) %>"><%= link_to customers_path do %><i class="fa fa-users"></i><span>Customers</span><% end %></li>
     <li class="<%= activate_if_current_page(sales_path) %>"><%= link_to sales_path do %><i class="fa fa-circle-o"></i><span>Sales</span><% end %></li>
     <li class="<%= activate_if_current_page(stocks_path) %>"><%= link_to stocks_path do %><i class="fa fa-circle-o"></i><span>Stocks</span><% end %></li>
+    <li class="<%= activate_if_current_page(sales_returns_path) %>"><%= link_to sales_returns_path do %><i class="fa fa-random"></i><span>salesReturns</span><% end %></li>
+
     <li><%= link_to destroy_user_session_path, method: :delete do %><i class="fa fa-sign-out"></i><span>Log Out</span><% end %></li>
   </ul>
 </section>
