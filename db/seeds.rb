@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+SUPPLIERS = [
+  {supplier_name: 'Ravi', product_name: 'ABC', company_name: 'AVC', address: 'Nadiad', city_name: 'Nadiad', contact_no: '1234567890', gst_no: '1234567'},
+  {supplier_name: 'Manoj', product_name: 'ABC', company_name: 'AVC', address: 'Nadiad', city_name: 'Nadiad', contact_no: '1234567890', gst_no: '1234567'},
+  {supplier_name: 'Kishan', product_name: 'ABC', company_name: 'AVC', address: 'Nadiad', city_name: 'Nadiad', contact_no: '1234567890', gst_no: '1234567'},
+  {supplier_name: 'Rdm', product_name: 'XYZ', company_name: 'AVC', address: 'Nadiad', city_name: 'Nadiad', contact_no: '1234567890', gst_no: '1234567'},
+  {supplier_name: 'Kdm', product_name: 'XYZ', company_name: 'AVC', address: 'Nadiad', city_name: 'Nadiad', contact_no: '1234567890', gst_no: '1234567'}
+]
+
+PRODUCTS = [
+  {product_name: 'ABC', product_code: 1234, brand: 'ABCXYZ', product_category: 'cat', unit: 10, cgst: 9, sgst: 9, product_cost: 12000, product_price: 11500},
+  {product_name: 'CDE', product_code: 4567, brand: 'ABCXYZ', product_category: 'cat', unit: 10, cgst: 9, sgst: 9, product_cost: 12000, product_price: 11500},
+  {product_name: 'EFG', product_code: 7891, brand: 'ABCXYZ', product_category: 'cat', unit: 10, cgst: 9, sgst: 9, product_cost: 12000, product_price: 11500},
+  {product_name: 'GHI', product_code: 1123, brand: 'ABCXYZ', product_category: 'cat', unit: 10, cgst: 9, sgst: 9, product_cost: 12000, product_price: 11500},
+  {product_name: 'JKL', product_code: 3456, brand: 'ABCXYZ', product_category: 'cat', unit: 10, cgst: 9, sgst: 9, product_cost: 12000, product_price: 11500}
+]
+
+CUSTOMERS = [
+  {customer_name: 'abcd', email: 'abcd@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'},
+  {customer_name: 'efgh', email: 'efgh@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'},
+  {customer_name: 'ijkl', email: 'ijkl@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'},
+  {customer_name: 'mnop', email: 'mnop@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'},
+  {customer_name: 'qstru', email: 'qstru@ex.com', phone_no: '1234567890', address: 'Nadiad', city: 'Nadiad'}
+]
+
+SUPPLIERS.each{|supplier| Supplier.find_or_create_by!(supplier_name: supplier[:supplier_name])}
+PRODUCTS.each{|product| Product.find_or_create_by!(product_name: product[:product_name])}
+CUSTOMERS.each{|customer| Customer.find_or_create_by!(customer_name: customer[:customer_name])}
