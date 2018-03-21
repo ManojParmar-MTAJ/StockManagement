@@ -27,14 +27,12 @@ class ProductsController < ApplicationController
     if @product.update(product_params)
       redirect_to @product, notice: 'product was sussfully updated.'
     else
-      render :edit
-    end
-  end
+     render :edit
+   end
+ end
 
   def destroy
-    if @product.destroy
-      redirect_to products_path, notice: 'product was successfully destroyed.'
-    end
+    @product.destroy
   end
 
   private

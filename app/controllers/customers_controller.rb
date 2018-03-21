@@ -32,9 +32,7 @@ class CustomersController < ApplicationController
   end
 
   def destroy
-    if @customer.destroy
-      redirect_to customers_path, notice: 'customer was successfully destroyed.'
-    end
+     @customer.destroy
   end
 
   private

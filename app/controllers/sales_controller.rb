@@ -29,20 +29,14 @@ class SalesController < ApplicationController
       render :edit
    end
  end
-
-  def destroy
-    if @sale.destroy
-      redirect_to sales_path, notice: 'sales was successfully destroyed.'
-    end
- end
-
-  private
-
-  def set_sale
-    @sale = Sale.find(params[:id])
-  end
-
-  def sale_params
-    params.require(:sale).permit(:customer_id, :product_id, :payment_status, :sales_date, :unit)
-  end
+ def destroy
+   @sale.destroy
+end
+private
+def set_sale
+  @sale = Sale.find(params[:id])
+end
+def sale_params
+  params.require(:sale).permit(:customer_id,:product_id,:payment_status,:sales_date,:unit)
+end
 end

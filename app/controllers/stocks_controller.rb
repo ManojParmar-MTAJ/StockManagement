@@ -31,9 +31,7 @@ class StocksController < ApplicationController
   end
 
   def destroy
-    if @stock.destroy
-      redirect_to stocks_path, notice: 'stock was successfully destroyed.'
-    end
+    @stock.destroy
   end
 
   def set_stock

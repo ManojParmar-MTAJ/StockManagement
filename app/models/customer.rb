@@ -4,7 +4,7 @@ class Customer < ApplicationRecord
  validates :phone_no,:numericality =>true
  validates :customer_name, length: { minimum: 2 , maximum: 10 }
 
-  has_many :sales
+  has_many :sales, dependent: :destroy
 
   scope :search_customers, ->(search) { where("customer_name ILIKE ?", "%#{search}%") }
 
