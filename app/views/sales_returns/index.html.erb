@@ -16,44 +16,17 @@
     <div class="col-md-12">
       <div class="box">
         <div class="box-body">
-          <table class="table table-bordered table-hover">
-            <h1 align="center"></h1>
-            <thead>
-              <tr>
-                <th>Sale Id</th>
-                <th>Customer Id</th>
-                <th>Product Id</th>
-                <th>SalesReturn Date</th>
-                <th>Unit</th>
-                <th>Price</th>
-                <th colspan="4">Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <% @salesReturns.each do |salesReturn| %>
-                <tr>
-                  <td><%= salesReturn.sale.id %></td>
-                  <td><%= salesReturn.customer.customer_name %></td>
-                  <td><%= salesReturn.product.id%></td>
-                  <td><%= salesReturn.salesreturn_date %></td>
-                  <td><%= salesReturn.sale.unit %></td>
-                  <td><%= salesReturn.product.product_price%></td>
-                  <td><%= link_to salesReturn do %>
-                    <i class="fa fa-eye"></i>
-                  <% end %>
-                </td>
-                <td><%= link_to edit_sales_return_path(salesReturn) do %>
-                  <i class="fa fa-pencil"></i>
-                <% end %>
-              </td>
-              <td><%= link_to (salesReturn), method: :delete, data: { confirm: 'Are you sure?' } do%>
-                <i class="fa fa-trash"></i>
-              <% end %>
-            </td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+          <div class='col-md-offset-8 col-md-4 mar-tp-btm-5' >
+            <div class="input-group">
+              <%=text_field_tag :search_sales_return_txt, nil, class: 'form-control', placeholder: 'Search SalesReturn' %>
+              <span class="input-group-btn">
+                <button type="submit" id='search_sales_returns' class="btn btn-primary btn-flat">Search</button>
+              </span>
+            </div>
+          </div>
+        <div class="box-body"id='sales_returns_div'>
+            <%= render 'sales_returns_table' %>
+          </div>
   </div>
 </div>
 </div>
@@ -62,4 +35,12 @@
 </div>
 </div>
 </section>
-<br>
+<script>
+  $('#search_sales_returns').click(function(){
+    $.ajax({
+      url: 'sales_returns',
+      dataType: 'script',
+      data: {search: $('#search_sales_return_txt').val()}
+    })
+  })
+</script>

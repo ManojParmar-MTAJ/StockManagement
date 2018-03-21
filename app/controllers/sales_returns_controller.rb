@@ -4,7 +4,8 @@ class SalesReturnsController < ApplicationController
   def edit; end
 
   def index
-    @salesReturns = SalesReturn.all
+    @salesReturns = SalesReturn.all.page(params[:page]).per(5)
+    @salesReturns = SalesReturn.search_sales(params[:page]).per(5) if params[:search].present?
   end
 
   def new
