@@ -1,4 +1,5 @@
 class Supplier < ApplicationRecord
+
    validates :supplier_name, :product_name, :company_name, :address, :city_name, :contact_no, :gst_no, presence: true
    validates :gst_no, numericality:true
   validates :supplier_name, length:{minimum:2,maximum: 20 }

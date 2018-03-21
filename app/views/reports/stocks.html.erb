@@ -1,0 +1,50 @@
+<section class="content-header">
+  <h1>
+    Stocks
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+      <li >
+        <%= link_to 'stock' %>
+      </li>
+    </ol>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="box">
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <h1 align="center"></h1>
+              <thead>
+                <tr>
+                  <th>Supplier Name</th>
+                  <th>Product code</th>
+                  <th>Unit</th>
+                  <th>Status</th>
+                  <th>Total</th>
+                </thead>
+                <tbody>
+                  <% @stocks.each do |stock| %>
+                  <tr>
+                   <td><%= link_to stock.supplier.supplier_name.capitalize, show_stock_report_path(stock), remote: true %></td>
+                   <td><%= stock.product.product_code %></td>
+                   <td><%= stock.unit %></td>
+                   <td><%= stock.status %></td>
+                   <td><%= stock.total%></td>
+                 </tr>
+                 <% end %>
+               </tbody>
+             </table>
+           </div>
+         </div>
+       </div>
+       <div class='col-md-12'>
+        <%= link_to 'New Stock', new_stock_path, class: 'btn btn-primary' %>
+      </div>
+    </div>
+    <div class="modal fade" id="stock_modal"></div>
+  </section>
+  <br>

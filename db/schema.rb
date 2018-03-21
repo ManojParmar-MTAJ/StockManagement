@@ -49,9 +49,9 @@ ActiveRecord::Schema.define(version: 20180312084216) do
     t.string "product_id"
     t.string "payment_status"
     t.string "sales_date"
-    t.string "unit"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "unit"
   end
 
   create_table "sales_returns", force: :cascade do |t|
@@ -68,13 +68,13 @@ ActiveRecord::Schema.define(version: 20180312084216) do
   create_table "stocks", force: :cascade do |t|
     t.string "supplier_id"
     t.string "product_id"
-    t.string "unit"
     t.string "date"
     t.string "status"
     t.string "total"
     t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "unit"
   end
 
   create_table "suppliers", force: :cascade do |t|

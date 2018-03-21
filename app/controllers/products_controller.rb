@@ -35,11 +35,11 @@ class ProductsController < ApplicationController
     @product.destroy
   end
 
-  private
+private
 
-  def set_product
-    @product = Product.find(params[:id])
-  end
+def set_product
+  @product = Product.find(params[:id])
+end
 
   def product_params
     params.require(:product).permit(:product_name, :product_code, :image, :brand, :product_category, :unit, :cgst, :sgst, :product_cost, :product_price)

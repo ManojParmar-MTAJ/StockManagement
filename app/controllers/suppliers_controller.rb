@@ -20,8 +20,8 @@ class SuppliersController < ApplicationController
       redirect_to @supplier, notice: 'supplier was successfully created'
     else
       render :new
+    end
   end
-      end
 
   def update
     if @supplier.update(supplier_params)

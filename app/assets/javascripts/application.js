@@ -15,3 +15,5 @@
 //= require bootstrap-sprockets
 //= require adminlte.min.js
 //= require icheck.min
+//= require morris.min.js
+//= require raphael.min.js

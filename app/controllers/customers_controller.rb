@@ -35,11 +35,11 @@ class CustomersController < ApplicationController
      @customer.destroy
   end
 
-  private
+private
 
-  def set_customer
-    @customer = Customer.find(params[:id])
-  end
+def set_customer
+  @customer = Customer.find(params[:id])
+end
 
   def customer_params
     params.require(:customer).permit(:customer_name, :email, :phone_no, :address, :city)
