@@ -1,6 +1,6 @@
 class SuppliersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_supplier, only: %i[show edit update destroy]
+  before_action :set_supplier, only: [:show, :edit, :update, :destroy]
 
   def index
     @suppliers = Supplier.all.page(params[:page]).per(5).search_suppliers(params[:search])
