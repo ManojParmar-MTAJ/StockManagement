@@ -4,7 +4,8 @@ class SalesReturnsController < ApplicationController
   def edit; end
 
   def index
-    @salesReturns = SalesReturn.all
+    @salesReturns = SalesReturn.all.page(params[:page]).per(5)
+    @salesReturns = SalesReturn.search_sales_return(params[:search]).page(params[:page]).per(5) if params[:search].present?
   end
 
   def new
@@ -31,9 +32,7 @@ class SalesReturnsController < ApplicationController
   end
 
   def destroy
-    if @salesReturn.destroy
-      redirect_to sales_returns_path, notice: 'salesReturn was successfully destroyed.'
-    end
+    @salesReturn.destroy
   end
 
   def set_salesReturn

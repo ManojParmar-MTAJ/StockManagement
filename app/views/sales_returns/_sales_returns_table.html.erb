@@ -11,10 +11,9 @@
       <th colspan="4">Action</th>
     </tr>
   </thead>
-
   <tbody>
     <% @salesReturns.each do |salesReturn| %>
-          <tr id='tr_<%= salesReturn.id %>'>
+        <tr id='tr_<%= salesReturn.id %>'>
         <td><%= salesReturn.sale.id %></td>
         <td><%= salesReturn.customer.customer_name %></td>
         <td><%= salesReturn.product.id%></td>
@@ -29,7 +28,7 @@
         <i class="fa fa-pencil"></i>
       <% end %>
     </td>
-    <td><%= link_to (salesReturn), method: :delete, data: { confirm: 'Are you sure?' } do%>
+    <td><%= link_to (salesReturn), method: :delete, data: { confirm: 'Are you sure?' }, remote: true do%>
       <i class="fa fa-trash"></i>
     <% end %>
   </td>

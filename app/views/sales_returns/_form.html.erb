@@ -24,29 +24,29 @@
                 <%= form.label :sale_id %>
                 <%= form.select :sale_id, Sale.pluck(:id, :id), {prompt: 'Select Sale'}, {class: 'form-control'} %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :customer_id %>
                  <%= form.select :customer_id, Customer.pluck(:customer_name, :id), {prompt: 'Select Customer'}, {class: 'form-control'}  %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :product_id %>
                 <%= form.select :product_id, Product.pluck(:product_name, :id), {prompt: 'Select Product'}, {class: 'form-control'}  %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :sales_return_date, 'Sales Return Date' %>
                 <%= form.date_field :salesreturn_date,class: 'form-control', placeholder:'yyyy/mm/dd'%>
                 </div>
-              <div class="form-group ">
+              <div class="form-group">
                 <%= form.label :unit %>
                 <%= form.select :unit, Sale.pluck(:unit, :id), {prompt: 'Select Unit'}, {class: 'form-control'}  %>
               </div>
-              <div class="form-group ">
+              <div class="form-group">
               <%= form.label :price %>
              <%= form.select :price, Product.pluck(:product_price, :id), {prompt: 'Select Product'}, {class: 'form-control'} %>
               </div>
-            <div class="clearfix"></div>
-            <div class='col-md-6'>
-              <%= form.submit class: 'btn btn-primary'%></div>
+            <div class="form-group">
+              <%= form.submit class: 'btn btn-primary'%>
+            </div>
           </div>
         </div>
       </form>
