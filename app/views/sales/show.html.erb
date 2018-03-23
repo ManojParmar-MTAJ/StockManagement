@@ -12,49 +12,85 @@
         </li>
       </ol>
     </section>
-
-    <div class="row">
-
-      <div class="col-md-12">
-
-        <div class="box box-primary">
-
-          <form role="form">
+    <section class='content'>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="box box-primary" id='print_div'>
             <div class="box-body">
-
-              <div class="col-md-6">
-                <div class="form-group">
-                  <strong>Customer:</strong>
-                  <%= @sale.customer.customer_name.titleize %>
+              <div class='row'>
+                <div class='col-md-6'>
+                  <div class='form-group'>
+                    <label class='control-label'>Bill No:</label>
+                    <%= @sale.id %>
+                  </div>
+                  <div class='form-group'>
+                    <label class='control-label'>Customer Name:</label>
+                    <%= @sale.customer.customer_name.titleize %>
+                  </div>
                 </div>
-
-                <div class="form-group ">
-                  <strong>Product:</strong>
-                  <%= @sale.product.product_name.titleize %>
+                <div class='col-md-6'>
+                  <div class='form-group'>
+                    <label class='control-label'>Date:</label>
+                    <%= @sale.sales_date %>
+                  </div>
+                  <div class='form-group'>
+                    <label class='control-label'>GST No:</label>
+                    <%= rand(0001..9999) %>
+                  </div>
                 </div>
-
-                <div class="form-group ">
-                  <strong>Payment status:</strong>
-                  <%= @sale.payment_status %>
-                </div>
-
-                <div class="form-group ">
-                  <strong>Sales Date:</strong>
-                  <%= @sale.sales_date %>
-                </div>
-                <div class="form-group ">
-                  <strong>Unit:</strong>
-                  <%= @sale.unit %>
+              </div>
+              <div class='row'>
+                <div class='col-md-12'>
+                  <table class='table table-responsive' border=1>
+                    <thead>
+                      <tr>
+                        <th>Product Name</th>
+                        <th>Unit</th>
+                        <th>Product Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><%= @sale.product.product_name.titleize %></td>
+                        <td><%= @sale.unit %></td>
+                        <td><%= number_to_rupees @sale.product.product_price %></td>
+                      </tr>
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
-              <div class="clearfix"></div>
-              <div class='col-md-6'>
-                <%= link_to 'Edit', edit_sale_path(@sale),class:'btn btn-primary'%></div>
-
+              <div class='row'>
+                <div class='col-md-offset-7 col-md-5'>
+                 <div class='form-group'>
+                  <label class='control-label'><%= "CGST(#{@sale.product.cgst}%):" %></label>
+                  <%= number_to_rupees total_cgst %>
+                </div>
+                <div class='form-group'>
+                  <label class='control-label'><%= "SGST(#{@sale.product.sgst}%):" %></label>
+                  <%= number_to_rupees total_sgst %>
+                </div>
+                <div class='form-group'>
+                  <label class='control-label'>Total:</label>
+                  <%= number_to_rupees total_bill %>
+                </div>
               </div>
-            </form>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+      <div class='col-md-6'>
+        <%= link_to 'Edit', edit_sale_path(@sale),class:'btn btn-primary'%>
+        <a class="btn btn-default" onclick="printDiv('print_div')"><i class="fa fa-print"></i> Print</a>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+     document.body.innerHTML = printContents;
+     window.print();
+     document.body.innerHTML = originalContents;
+   }
+ </script>

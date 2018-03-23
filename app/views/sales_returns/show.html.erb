@@ -1,60 +1,51 @@
+<section class="content-header">
+  <h1>
+    Sale Return
+  </h1>
+  <ol class="breadcrumb">
+    <li>
+      <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    </li>
+    <li>
+      <%= link_to 'salesReturn' %>
+    </li>
+  </ol>
+</section>
 <section class="content">
-  <section class="content-header">
-    <h1>
-      Show salesReturn
-      <small></small>
-    </h1>
-    <ol class="breadcrumb">
-      <li>
-        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
-        <li >
-          <%= link_to 'salesReturn' %>
-        </li>
-      </ol>
-    </section>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-primary">
-          <form role="form">
-            <div class="box-body">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <strong>Sale Id:</strong>
-                  <%= @salesReturn.sale_id %>
-                </div>
-                <div class="form-group ">
-                  <strong>Customer:</strong>
-                  <%= @salesReturn.customer.customer_name.titleize %>
-                </div>
-                <div class="form-group ">
-                  <strong>Product:</strong>
-                  <%= @salesReturn.product.product_name.titleize %>
-                </div>
-              </div>
-
-              <div class="col-md-6">
-                <div class="form-group ">
-                  <strong>SalesReturn Date:</strong>
-                  <%= @salesReturn.salesreturn_date %>
-                </div>
-                <div class="form-group ">
-                  <strong>Unit:</strong>
-                  <%= @salesReturn.unit %>
-                </div>
-
-                <div class="form-group">
-                  <strong>price:</strong>
-                  <%= @salesReturn.price %>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class='col-md-6'>
-                <%= link_to 'Edit', edit_sales_return_path(@salesReturn),class:'btn btn-primary'%></div>
-              </div>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class='control-label'>Sale ID:</label>
+              <%= @salesReturn.sale_id %>
             </div>
-          </form>
+            <div class="form-group ">
+              <label class='control-label'>Customer Name:</label>
+              <%= @salesReturn.customer.customer_name.titleize %>
+            </div>
+            <div class="form-group ">
+              <label class='control-label'>Product Name:</label>
+              <%= @salesReturn.product.product_name.titleize %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group ">
+              <label class='control-label'>Sale Return Date:</label>
+              <%= @salesReturn.salesreturn_date %>
+            </div>
+            <div class="form-group ">
+              <label class='control-label'>Unit:</label>
+              <%= @salesReturn.unit %>
+            </div>
+            <div class="form-group">
+              <label class='control-label'>Price:</label>
+              <%= @salesReturn.price %>
+            </div>
+          </div>
         </div>
       </div>
+      <%= link_to 'Edit', edit_sales_return_path(@salesReturn),class:'btn btn-primary'%>
     </div>
   </section>

@@ -1,61 +1,54 @@
+<section class="content-header">
+  <h1>
+    Show Supplier
+  </h1>
+  <ol class="breadcrumb">
+    <li><%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
+    </li>
+    <li>
+      <%= link_to 'Supplier' %>
+    </li>
+  </ol>
+</section>
 <section class="content">
-  <section class="content-header">
-    <h1>
-      Show Supplier
-      <small></small>
-    </h1>
-    <ol class="breadcrumb">
-      <li>
-        <%= link_to raw('<i class="fa fa-dashboard"></i> Home'), root_path %>
-        <li >
-          <%= link_to 'supplier' %>
-        </li>
-      </ol>
-    </section>
-
-    <div class="row">
-      <div class="col-md-12">
-        <div class="box box-primary">
-          <form role="form">
-            <div class="box-body">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <strong>Supplier Name :</strong>
-                  <%= @supplier.supplier_name %>
-                </div>
-                <div class="form-group ">
-                  <strong>Product Name:</strong>
-                  <%= @supplier.product_name %>
-                </div>
-                <div class="form-group ">
-                  <strong>Company Name:</strong>
-                  <%= @supplier.company_name %>
-                </div>
-                <div class="form-group ">
-                  <strong>Address:</strong>
-                  <%= @supplier.address %>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <strong>City Name:</strong>
-                  <%= @supplier.city_name %>
-                </div>
-                <div class="form-group">
-                  <strong>Contact No:</strong>
-                  <%= @supplier.contact_no %>
-                </div>
-                <div class="form-group">
-                  <strong>GST No:</strong>
-                  <%= @supplier.gst_no %>
-                </div>
-              </div>
-              <div class="clearfix"></div>
-              <div class='col-md-6'>
-                <%= link_to 'Edit', edit_supplier_path(@supplier),class:'btn btn-primary'%></div>
-              </div>
-            </form>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="box box-primary">
+        <div class="box-body">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class='control-label'>Supplier Name:</label>
+              <%= @supplier.supplier_name %>
+            </div>
+            <div class="form-group">
+              <label class='control-label'>Product Name:</label>
+              <%= @supplier.product_name %>
+            </div>
+            <div class="form-group">
+              <label class='control-label'>Company Name:</label>
+              <%= @supplier.company_name %>
+            </div>
+            <div class="form-group">
+              <label class='control-label'>Address:</label>
+              <%= @supplier.address %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label class='control-label'>City Name:</label>
+              <%= @supplier.city_name %>
+            </div>
+            <div class="form-group">
+              <label class='control-label'>Contact No:</label>
+              <%= @supplier.contact_no %>
+            </div>
+            <div class="form-group">
+              <strong><label class='control-label'>GST No:</label></strong>
+              <%= @supplier.gst_no %>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+      <%= link_to 'Edit', edit_supplier_path(@supplier),class:'btn btn-primary'%></div>
+    </div>
+  </section>

@@ -15,7 +15,7 @@ respond_to :docx
     respond_to do |format|
        format.html
        format.pdf do
-         pdf = CustomerPdf.new(@customers)
+         pdf = CustomerPdf.new(Customer.find(params[:customer_id]))
          send_data pdf.render, filename: 'reports.pdf', type: 'application/pdf',disposition:'inline'
        end
      end
